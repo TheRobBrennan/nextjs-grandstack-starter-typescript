@@ -7,7 +7,9 @@
   "license": "ISC",
   "scripts": {
     "deploy": "vercel",
-    "start": "cd app && npm run dev"
+    "start": "cd app && npm run dev",
+    "open:repo": "npm repo",
+    "open:vercel": "open https://vercel.com"
   },
   "repository": {
     "type": "git",
