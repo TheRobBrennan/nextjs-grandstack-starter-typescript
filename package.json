@@ -1,0 +1,20 @@
+{
+  "name": "nextjs-grandstack-starter-typescript-typescript",
+  "version": "0.0.0",
+  "description": "Example GRANDstack starter using Next.js to power your React app",
+  "keywords": [],
+  "author": "Rob Brennan <rob@therobbrennan.com> (therobbrennan.com)",
+  "license": "ISC",
+  "scripts": {
+    "deploy": "vercel",
+    "start": "cd app && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheRobBrennan/nextjs-grandstack-starter-typescript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TheRobBrennan/nextjs-grandstack-starter-typescript/issues"
+  },
+  "homepage": "https://github.com/TheRobBrennan/nextjs-grandstack-starter-typescript#readme"
+}
