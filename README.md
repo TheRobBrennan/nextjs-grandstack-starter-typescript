@@ -44,6 +44,24 @@ $ npm run dev
 
 You should be able to view your application at [http://localhost:3000](http://localhost:3000). 🤓
 
+### TypeScript
+
+To add [TypeScript](https://www.typescriptlang.org) to your [Next.js](https://nextjs.org) app:
+
+```sh
+# Navigate to your app directory
+$ cd app
+
+# Install TypeScript dev dependencies
+$ npm i -D typescript @types/react @types/node
+
+# Create an empty tsconfig.json file
+$ touch tsconfig.json
+
+# Run your app and Next.js will automatically discover and configure TypeScript for you
+$ npm run dev
+```
+
 ## Static files
 
 The `public` folder in your [Next.js](https://nextjs.org) app can be used to serve whatever assets you desire (e.g. `app/public/logo.png` would be available at http://localhost:3000/logo.png)
