@@ -99,6 +99,14 @@ The following scripts are available at both the top level project directory as w
 
 - `npm run test:watch` - Runs Jest in `--watch` mode; running tests related to current code changes and not the entire suite
 
+## Bundle analysis
+
+This project uses the [Next.js + Webpack Bundle Analyzer](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer) to generate bundle analysis of both client and server bundles by running the `npm run analyze` script:
+
+![app/__screenshots__/analyze-client.png](app/__screenshots__/analyze-client.png)
+
+![app/__screenshots__/analyze-server.png](app/__screenshots__/analyze-server.png)
+
 ## Static files
 
 The `public` folder in your [Next.js](https://nextjs.org) app can be used to serve whatever assets you desire (e.g. `app/public/logo.png` would be available at http://localhost:3000/logo.png)

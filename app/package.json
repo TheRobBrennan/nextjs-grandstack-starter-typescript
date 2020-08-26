@@ -6,6 +6,7 @@
   "author": "Rob Brennan <rob@therobbrennan.com> (therobbrennan.com)",
   "license": "ISC",
   "scripts": {
+    "analyze": "ANALYZE=true npm run build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

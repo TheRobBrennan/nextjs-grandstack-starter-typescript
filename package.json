@@ -6,6 +6,7 @@
   "author": "Rob Brennan <rob@therobbrennan.com> (therobbrennan.com)",
   "license": "ISC",
   "scripts": {
+    "analyze": "cd app && npm run analyze",
     "deploy": "vercel",
     "start": "cd app && npm run dev",
     "test": "cd app && npm test",
