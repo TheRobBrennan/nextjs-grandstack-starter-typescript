@@ -130,6 +130,10 @@ This project has an example [Apollo GraphQL](https://www.apollographql.com) serv
 
 If you are running this project locally, you can view the [GraphIQL IDE](http://localhost:3000/api/graphql) at [http://localhost:3000/api/graphql](http://localhost:3000/api/graphql)
 
+### Google Analytics
+
+This project uses [Google Analytics](http://analytics.google.com) to track user interactions and evaluate the usage of the application.
+
 ### Vercel
 
 This project has been configured to automatically deploy to [Vercel](https://vercel.com/) using the [Vercel for GitHub](https://vercel.com/github) integration.
