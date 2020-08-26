@@ -65,15 +65,34 @@ describe("Neo4j database driver", () => {
         expect(_authToken.credentials).toEqual(expectedPassword)
       })
       describe("when the neo4jEncryptedConnection parameter", () => {
-        describe("is truthy", () => {
+        describe("is undefined", () => {
+          const { _config } = driver(URI, USER, PASSWORD)
+          it("encryption has been set to ENCRYPTION_OFF", () => {
+            expect(_config.encrypted).toEqual("ENCRYPTION_OFF")
+          })
+        })
+        describe("is set to the string value 'false'", () => {
+          const { _config } = driver(URI, USER, PASSWORD, "false")
+          it("encryption has been set to ENCRYPTION_OFF", () => {
+            expect(_config.encrypted).toEqual("ENCRYPTION_OFF")
+          })
+        })
+        describe("is set to the boolean value 'false'", () => {
+          const { _config } = driver(URI, USER, PASSWORD, false)
+          it("encryption has been set to ENCRYPTION_OFF", () => {
+            expect(_config.encrypted).toEqual("ENCRYPTION_OFF")
+          })
+        })
+        describe("is set to the string value 'true'", () => {
+          const { _config } = driver(URI, USER, PASSWORD, "true")
           it("encryption has been set to ENCRYPTION_ON", () => {
-            const { _config } = driver(URI, USER, PASSWORD, "true")
             expect(_config.encrypted).toEqual("ENCRYPTION_ON")
           })
         })
-        describe("is falsy", () => {
-          it("encryption has been set to ENCRYPTION_OFF", () => {
-            expect(_config.encrypted).toEqual("ENCRYPTION_OFF")
+        describe("is set to the boolean value 'true'", () => {
+          const { _config } = driver(URI, USER, PASSWORD, true)
+          it("encryption has been set to ENCRYPTION_ON", () => {
+            expect(_config.encrypted).toEqual("ENCRYPTION_ON")
           })
         })
       })

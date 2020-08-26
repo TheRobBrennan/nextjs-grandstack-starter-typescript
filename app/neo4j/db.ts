@@ -14,7 +14,12 @@ export const driver = (
   neo4jUser = process.env.NEO4J_USER,
   neo4jPassword = process.env.NEO4J_PASSWORD,
   neo4jEncryptedConnection = process.env.NEO4J_ENCRYPTED
-) =>
-  neo4j.driver(neo4jURI, neo4j.auth.basic(neo4jUser, neo4jPassword), {
-    encrypted: !!neo4jEncryptedConnection ? "ENCRYPTION_ON" : "ENCRYPTION_OFF",
+) => {
+  // REMEMBER: !!('false') IS true; we need to explicitly check for a false string value
+  const isEncrypted =
+    !!neo4jEncryptedConnection && neo4jEncryptedConnection != "false"
+
+  return neo4j.driver(neo4jURI, neo4j.auth.basic(neo4jUser, neo4jPassword), {
+    encrypted: isEncrypted ? "ENCRYPTION_ON" : "ENCRYPTION_OFF",
   })
+}
