@@ -148,6 +148,21 @@ This project has been configured to automatically deploy to [Vercel](https://ver
 
 #### Environment variables
 
-We can define the environment variables we would like to use for our `Production`, `Preview`, and `Development` environments. Navigate to your [Vercel](https://vercel.com/) project settings and define your environment variables as you'd like 🤓
+We can define the environment variables we would like to use for our `Production`, `Preview`, and `Development` environments. Navigate to your [Vercel](https://vercel.com/) project settings and define the following environment variables:
+
+```sh
+GOOGLE_ANALYTICS_TRACKING_ID=UA-156456153-7
+NEO4J_URI=bolt://18.207.112.93:33129
+NEO4J_USER=neo4j
+NEO4J_PASSWORD=rewards-railroad-rowers
+
+# Enable encrypted driver connection for Neo4j
+#NEO4J_ENCRYPTED=true
+
+# Specify a specific Neo4j database (v4.x+ only)
+#NEO4J_DATABASE=neo4j
+```
+
+Please refer to `app/.env.sample` to see the latest environment variables that you will need to declare in the event the above list is incomplete.
 
 Please see [https://vercel.com/docs/v2/build-step#environment-variables](https://vercel.com/docs/v2/build-step#environment-variables) and/or [https://nextjs.org/docs/basic-features/environment-variables](https://nextjs.org/docs/basic-features/environment-variables) for details on defining environment variables for your application on [Vercel](https://vercel.com/).
