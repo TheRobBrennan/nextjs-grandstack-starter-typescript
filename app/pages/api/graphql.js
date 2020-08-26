@@ -1,11 +1,9 @@
 import { ApolloServer } from "apollo-server-micro"
 import { driver } from "../../neo4j/db"
-import { makeAugmentedSchema } from "neo4j-graphql-js"
-import { typeDefs } from "../../apollo/type-defs"
-import { resolvers } from "../../apollo/resolvers"
+import { augmentedSchema as schema } from "../../apollo/schema"
 
 const apolloServer = new ApolloServer({
-  schema: makeAugmentedSchema({ typeDefs, resolvers }),
+  schema,
   context: { driver },
 
   // TODO: Disable GraphIQL in production by setting these to false
