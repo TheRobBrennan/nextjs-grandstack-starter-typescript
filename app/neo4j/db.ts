@@ -5,16 +5,16 @@ export const DEFAULT_NEO4J_DESKTOP = {
   URI: "bolt://localhost:7687",
   USER: "neo4j",
   PASSWORD: "neo4j",
+  isEncrypted: false, // v3.5 does not use encrypted connections, but 4.0 does
 }
 
 // Create a configured neo4j driver instance (this doesn't start a session)
-export const driver = neo4j.driver(
-  process.env.NEO4J_URI || DEFAULT_NEO4J_DESKTOP.URI,
-  neo4j.auth.basic(
-    process.env.NEO4J_USER || DEFAULT_NEO4J_DESKTOP.USER,
-    process.env.NEO4J_PASSWORD || DEFAULT_NEO4J_DESKTOP.PASSWORD
-  ),
-  {
-    encrypted: process.env.NEO4J_ENCRYPTED ? "ENCRYPTION_ON" : "ENCRYPTION_OFF",
-  }
-)
+export const driver = (
+  neo4jURI = process.env.NEO4J_URI,
+  neo4jUser = process.env.NEO4J_USER,
+  neo4jPassword = process.env.NEO4J_PASSWORD,
+  neo4jEncryptedConnection = process.env.NEO4J_ENCRYPTED
+) =>
+  neo4j.driver(neo4jURI, neo4j.auth.basic(neo4jUser, neo4jPassword), {
+    encrypted: !!neo4jEncryptedConnection ? "ENCRYPTION_ON" : "ENCRYPTION_OFF",
+  })

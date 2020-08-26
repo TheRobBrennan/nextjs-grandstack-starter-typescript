@@ -4,7 +4,7 @@ import { augmentedSchema as schema } from "../../apollo/schema"
 
 const apolloServer = new ApolloServer({
   schema,
-  context: { driver },
+  context: { driver: driver() },
 
   // TODO: Disable GraphIQL in production by setting these to false
   introspection: true,
