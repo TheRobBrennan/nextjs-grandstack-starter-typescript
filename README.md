@@ -1,4 +1,4 @@
-# GRANDstack Starter for Next.js
+# GRANDstack Starter for Next.js with TypeScript
 
 This project is a starter for building a [GRANDstack](https://grandstack.io) ([GraphQL](https://graphql.org), [React](https://reactjs.org), [Apollo](https://www.apollographql.com), [Neo4j Database](https://neo4j.com)) application using [Next.js](https://nextjs.org) and [TypeScript](https://www.typescriptlang.org) instead of the original [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html) example available at [https://github.com/grand-stack/grand-stack-starter](https://github.com/grand-stack/grand-stack-starter).
 
@@ -61,6 +61,43 @@ $ touch tsconfig.json
 # Run your app and Next.js will automatically discover and configure TypeScript for you
 $ npm run dev
 ```
+
+## Tests
+
+This project uses [Jest](https://jestjs.io/) and [Enzyme](https://enzymejs.github.io/enzyme/) for unit and integration tests.
+
+The following scripts are available at both the top level project directory as well as the `app` directory:
+
+- `npm run test` or `npm test` - This runs a single run of the Jest tests for our project.
+- `npm run test:ci` - Useful for running Jest tests in a continuous integration (CI) environment
+  - See [https://jestjs.io/docs/en/cli#--ci](https://jestjs.io/docs/en/cli#--ci) for more details
+- `npm run test:coverage` - Generates a code coverage report of the Jest tests
+
+  ```sh
+
+  PASS  __tests__/index.test.tsx
+    The default page
+      ✓ should contain placeholder text (27 ms)
+
+  -----------|---------|----------|---------|---------|-------------------
+  File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+  -----------|---------|----------|---------|---------|-------------------
+  All files  |     100 |      100 |     100 |     100 |
+  index.tsx  |     100 |      100 |     100 |     100 |
+  -----------|---------|----------|---------|---------|-------------------
+  Test Suites: 1 passed, 1 total
+  Tests:       1 passed, 1 total
+  Snapshots:   0 total
+  Time:        2.032 s
+  Ran all test suites.
+
+  ```
+
+- `npm run test:coverage:view` - Generates a code coverage report of the Jest tests and automatically launches a web browser on macOS/linux to interactively see what code is and is not being covered in tests
+
+![app/__screenshots__/jest-coverage-report-html.png](app/__screenshots__/jest-coverage-report-html.png)
+
+- `npm run test:watch` - Runs Jest in `--watch` mode; running tests related to current code changes and not the entire suite
 
 ## Static files
 
