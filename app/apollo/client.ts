@@ -1,3 +1,4 @@
+import fetch from "cross-fetch"
 import { useMemo } from "react"
 import { ApolloClient, InMemoryCache } from "@apollo/client"
 
@@ -13,6 +14,7 @@ function createIsomorphLink() {
     return new HttpLink({
       uri: "/api/graphql",
       credentials: "same-origin",
+      fetch,
     })
   }
 }
