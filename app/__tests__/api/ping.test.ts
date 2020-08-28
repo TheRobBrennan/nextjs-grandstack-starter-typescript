@@ -1,4 +1,4 @@
-import { handler } from "../../pages/api/ping"
+import { handler, PingResponse as HandlerResponse } from "../../pages/api/ping"
 import {
   generateMockNextApiRequest,
   generateMockNextApiResponse,
@@ -23,13 +23,14 @@ describe("/api/ping", () => {
 
       expect(res.status).toHaveBeenCalledWith(200)
     })
-    it("an expected JSON response", async () => {
+    it("an expected JSON response from our handler", async () => {
       const result = await handler(req, res)
-      const expectedJsonResponse = { message: "Back-end API is online." }
+      const expectedResponse: HandlerResponse = {
+        message: expect.any(String),
+      }
+      const expectedResponseShape = expect.objectContaining(expectedResponse)
 
-      expect(res.json).toHaveBeenCalledWith(
-        expect.objectContaining(expectedJsonResponse)
-      )
+      expect(res.json).toHaveBeenCalledWith(expectedResponseShape)
     })
   })
 })

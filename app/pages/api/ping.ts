@@ -9,7 +9,7 @@ export const handler = async (
   res: NextApiResponse<PingResponse>
 ) => {
   res.status(200).json({
-    message: `Back-end API is online.`,
+    message: `Back-end API is online at ${Date.now()}`,
   })
 }
 
