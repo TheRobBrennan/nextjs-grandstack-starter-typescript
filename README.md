@@ -166,3 +166,17 @@ NEO4J_PASSWORD=rewards-railroad-rowers
 Please refer to `app/.env.sample` to see the latest environment variables that you will need to declare in the event the above list is incomplete.
 
 Please see [https://vercel.com/docs/v2/build-step#environment-variables](https://vercel.com/docs/v2/build-step#environment-variables) and/or [https://nextjs.org/docs/basic-features/environment-variables](https://nextjs.org/docs/basic-features/environment-variables) for details on defining environment variables for your application on [Vercel](https://vercel.com/).
+
+##### EXAMPLE: Neo4j GRANDstack database seed
+
+The original [https://github.com/grand-stack/grand-stack-starter](https://github.com/grand-stack/grand-stack-starter) had a helper script to seed your [Neo4j Database](https://neo4j.com) with example data. That same example database is available for you in a series of Cypher commands.
+
+Once you have connected to your [Neo4j Database](https://neo4j.com) with [Neo4j Browser](https://neo4j.com/developer/neo4j-browser/), simply copy the text as is from `app/neo4j/cypher/db.cypher` and execute the Cypher commands in a single action:
+
+![app/__screenshots__/neo4j-browser-01-paste-cypher.png](app/__screenshots__/neo4j-browser-01-paste-cypher.png)
+
+You can verify that your [Neo4j Database](https://neo4j.com) has been successfully created:
+
+![app/__screenshots__/neo4j-browser-02-example-database-from-seed.png](app/__screenshots__/neo4j-browser-02-example-database-from-seed.png)
+
+![app/__screenshots__/neo4j-browser-02a-example-database-from-seed-fullscreen-view.png](app/__screenshots__/neo4j-browser-02a-example-database-from-seed-fullscreen-view.png)
