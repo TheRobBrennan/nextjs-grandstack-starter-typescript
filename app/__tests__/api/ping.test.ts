@@ -5,7 +5,7 @@ import {
 } from "../../__mocks__/NextApi"
 
 describe("/api/ping", () => {
-  describe("when completed successfully should return", () => {
+  describe("when invoked should return", () => {
     let req, res
 
     beforeEach(() => {
