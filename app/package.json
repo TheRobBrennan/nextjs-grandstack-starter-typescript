@@ -14,6 +14,7 @@
     "test:ci": "jest --ci",
     "test:coverage": "jest --coverage",
     "test:coverage:view": "jest --coverage && open coverage/lcov-report/index.html",
+    "test:verbose": "jest --verbose",
     "test:watch": "jest --watch"
   },
   "repository": {
