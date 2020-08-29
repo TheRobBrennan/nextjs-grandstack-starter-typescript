@@ -5,10 +5,7 @@ import { createTestClient } from "apollo-server-testing"
 // Types
 import { HelloQuery, HelloResponse } from "../../apollo/queries/hello"
 
-describe("Our Apollo Server", () => {
-  it("should be defined", () => {
-    expect(apolloServer).toBeDefined()
-  })
+describe("Apollo Server", () => {
   describe("Query", () => {
     describe("hello", () => {
       it("should return an expected greeting", async () => {
