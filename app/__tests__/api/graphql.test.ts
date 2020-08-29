@@ -13,7 +13,7 @@ describe("Our Apollo Server", () => {
     describe("hello", () => {
       it("should return an expected greeting", async () => {
         // Setup a test client against our Apollo Server
-        // @ts-ignore
+        // @ts-ignore - Argument of type 'ApolloServer' is not assignable to parameter of type 'ApolloServerBase'. Types have separate declarations of a private property 'logger'
         const { query } = createTestClient(apolloServer)
 
         // Execute our query
