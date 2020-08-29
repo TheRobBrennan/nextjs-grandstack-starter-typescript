@@ -10,7 +10,7 @@ describe("Our Apollo Server", () => {
     expect(apolloServer).toBeDefined()
   })
   describe("Query", () => {
-    describe("Hello", () => {
+    describe("hello", () => {
       it("should return an expected greeting", async () => {
         // Setup a test client against our Apollo Server
         // @ts-ignore
