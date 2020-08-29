@@ -13,6 +13,7 @@
     "test:ci": "cd app && npm run test:ci",
     "test:coverage": "cd app && npm run test:coverage",
     "test:coverage:view": "cd app && npm run test:coverage:view",
+    "test:verbose": "cd app && npm run test:verbose",
     "test:watch": "cd app && npm run test:watch",
     "open:repo": "npm repo",
     "open:vercel": "open https://vercel.com"

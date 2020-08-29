@@ -14,6 +14,7 @@
     "test:ci": "jest --ci",
     "test:coverage": "jest --coverage",
     "test:coverage:view": "jest --coverage && open coverage/lcov-report/index.html",
+    "test:verbose": "jest --verbose",
     "test:watch": "jest --watch"
   },
   "repository": {
@@ -41,6 +42,7 @@
     "@types/jest": "^26.0.10",
     "@types/node": "^14.6.0",
     "@types/react": "^16.9.47",
+    "apollo-server-testing": "^2.17.0",
     "dotenv": "^8.2.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.3",

@@ -2,7 +2,7 @@ import { ApolloServer } from "apollo-server-micro"
 import { driver } from "../../neo4j/db"
 import { augmentedSchema as schema } from "../../apollo/schema"
 
-const apolloServer = new ApolloServer({
+export const apolloServer = new ApolloServer({
   schema,
   context: { driver: driver() },
 
