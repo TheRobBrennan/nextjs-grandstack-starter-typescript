@@ -6,7 +6,7 @@ export const apolloServer = new ApolloServer({
   schema,
   context: { driver: driver() },
 
-  // TODO: Disable GraphIQL in production by setting these to false
+  // Disable GraphIQL in production by setting these to false
   introspection: true,
   playground: true,
 })
