@@ -42,7 +42,8 @@
     "next-compose-plugins": "^2.2.0",
     "next-images": "^1.4.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "recharts": "^1.8.5"
   },
   "devDependencies": {
     "@types/enzyme": "^3.10.5",
