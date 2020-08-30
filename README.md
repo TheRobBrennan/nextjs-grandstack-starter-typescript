@@ -77,25 +77,45 @@ The following scripts are available at both the top level project directory as w
   - See [https://jestjs.io/docs/en/cli#--ci](https://jestjs.io/docs/en/cli#--ci) for more details
 - `npm run test:coverage` - Generates a code coverage report of the Jest tests
 
-  ```sh
+```sh
+ PASS  __tests__/api/ping.test.ts
+ PASS  apollo/type-defs.test.ts
+ PASS  apollo/resolvers.test.ts
+ PASS  analytics/google/googleAnalytics.test.ts
+ PASS  apollo/client.test.ts
+ PASS  __tests__/index.test.tsx
+ PASS  neo4j/db.test.ts
+ PASS  apollo/schema.test.ts (6.365 s)
+ PASS  __tests__/api/graphql.test.ts (6.979 s)
+---------------------|---------|----------|---------|---------|-------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+---------------------|---------|----------|---------|---------|-------------------
+All files            |     100 |      100 |     100 |     100 |
+ analytics/google    |     100 |      100 |     100 |     100 |
+  googleAnalytics.ts |     100 |      100 |     100 |     100 |
+ apollo              |     100 |      100 |     100 |     100 |
+  client.ts          |     100 |      100 |     100 |     100 |
+  resolvers.ts       |     100 |      100 |     100 |     100 |
+  schema.ts          |     100 |      100 |     100 |     100 |
+  type-defs.ts       |     100 |      100 |     100 |     100 |
+ apollo/queries      |     100 |      100 |     100 |     100 |
+  hello.ts           |     100 |      100 |     100 |     100 |
+ neo4j               |     100 |      100 |     100 |     100 |
+  db.ts              |     100 |      100 |     100 |     100 |
+ pages               |     100 |      100 |     100 |     100 |
+  index.tsx          |     100 |      100 |     100 |     100 |
+ pages/api           |     100 |      100 |     100 |     100 |
+  graphql.ts         |     100 |      100 |     100 |     100 |
+  ping.ts            |     100 |      100 |     100 |     100 |
+---------------------|---------|----------|---------|---------|-------------------
 
-  PASS  __tests__/index.test.tsx
-    The default page
-      ✓ should contain placeholder text (27 ms)
+Test Suites: 9 passed, 9 total
+Tests:       37 passed, 37 total
+Snapshots:   0 total
+Time:        8.284 s
+Ran all test suites.
 
-  -----------|---------|----------|---------|---------|-------------------
-  File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
-  -----------|---------|----------|---------|---------|-------------------
-  All files  |     100 |      100 |     100 |     100 |
-  index.tsx  |     100 |      100 |     100 |     100 |
-  -----------|---------|----------|---------|---------|-------------------
-  Test Suites: 1 passed, 1 total
-  Tests:       1 passed, 1 total
-  Snapshots:   0 total
-  Time:        2.032 s
-  Ran all test suites.
-
-  ```
+```
 
 - `npm run test:coverage:view` - Generates a code coverage report of the Jest tests and automatically launches a web browser on macOS/linux to interactively see what code is and is not being covered in tests
 
