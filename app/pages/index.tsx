@@ -1,7 +1,7 @@
 import { NextPage } from "next"
-import App from "../grandstack-demo/App"
+import Layout from "../grandstack-demo/components/Layout"
 
 const DefaultPage: NextPage = () => {
-  return <App />
+  return <Layout>Hello from Next.js and TypeScript!</Layout>
 }
 export default DefaultPage
