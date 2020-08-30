@@ -2,15 +2,7 @@ import { FC } from "react"
 
 // Material UI
 import { useStyles } from "./Layout.styles"
-import {
-  AppBar,
-  Box,
-  CssBaseline,
-  Container,
-  Link as MUILink,
-  Toolbar,
-  Typography,
-} from "@material-ui/core"
+import { Container } from "@material-ui/core"
 import Header from "./Header/Header"
 import Footer from "./Footer/Footer"
 
