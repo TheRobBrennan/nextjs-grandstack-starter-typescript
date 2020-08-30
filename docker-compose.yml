@@ -3,7 +3,7 @@ version: "3"
 services:
   neo4j: # Official image available at https://hub.docker.com/_/neo4j
     build: ./neo4j/v3.5.x
-    container_name: "neo4j-3.5"
+    container_name: "neo4j-3.5.x"
     ports:
       - 7474:7474 # HTTP
       - 7473:7473 # HTTPS

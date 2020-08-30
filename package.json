@@ -18,11 +18,11 @@
     "open:repo": "npm repo",
     "open:vercel": "open https://vercel.com",
     "docker:build": "docker-compose up --remove-orphans --build --force-recreate",
-    "docker:build:v4.0": "docker-compose -f docker-compose.yml -f docker-compose-add-neo4j-v4.0.yml up --remove-orphans --build --force-recreate",
+    "docker:build:v4.x": "docker-compose -f docker-compose.yml -f docker-compose-add-neo4j-v4.x.yml up --remove-orphans --build --force-recreate",
     "docker:start": "docker-compose up",
-    "docker:start:v4.0": "docker-compose -f docker-compose.yml -f docker-compose-add-neo4j-v4.0.yml up",
+    "docker:start:v4.x": "docker-compose -f docker-compose.yml -f docker-compose-add-neo4j-v4.x.yml up",
     "docker:stop": "docker-compose down",
-    "docker:stop:v4.0": "docker-compose -f docker-compose.yml -f docker-compose-add-neo4j-v4.0.yml down",
+    "docker:stop:v4.x": "docker-compose -f docker-compose.yml -f docker-compose-add-neo4j-v4.x.yml down",
     "docker:nuke": "docker system prune -a && docker volume prune"
   },
   "repository": {
