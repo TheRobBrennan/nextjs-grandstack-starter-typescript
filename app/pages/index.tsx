@@ -1,13 +1,7 @@
 import { NextPage } from "next"
-
-// Material UI
-import { Typography } from "@material-ui/core"
+import GRANDstackDemoApp from "../grandstack-demo/App"
 
 const DefaultPage: NextPage = () => {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      Welcome to Next.js with TypeScript
-    </Typography>
-  )
+  return <GRANDstackDemoApp />
 }
 export default DefaultPage
