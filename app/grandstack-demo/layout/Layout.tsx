@@ -13,6 +13,7 @@ import {
   Toolbar,
   Typography,
 } from "@material-ui/core"
+import Footer from "../components/Footer/Footer"
 
 interface ILayout {
   children?: JSX.Element[] | JSX.Element | string | null
@@ -50,17 +51,7 @@ const Layout: FC<ILayout> = ({ children }) => {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           {children}
-          {/* TODO: Refactor to a footer component */}
-          <Box pt={4}>
-            <Typography variant="body2" color="textSecondary" align="center">
-              {"Copyright © "}
-              {new Date().getFullYear()}{" "}
-              <MUILink color="inherit" href="/">
-                {APP_TITLE}
-              </MUILink>
-              {"."}
-            </Typography>
-          </Box>
+          <Footer />
         </Container>
       </main>
     </div>
