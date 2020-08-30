@@ -166,6 +166,34 @@ If you are running this project locally, you can view the [GraphIQL IDE](http://
 
 This project uses [Google Analytics](http://analytics.google.com) to track user interactions and evaluate the usage of the application.
 
+### Neo4j
+
+The [Neo4j Database](https://neo4j.com) is the cornerstone of our GRANDstack application.
+
+Once you have defined the environment variables - either in `app/.env` for local development or the appropriate places for your environment - you can have a [Neo4j Database](https://neo4j.com) hosted anywhere you'd like.
+
+[Neo4j](https://neo4j.com) has three options to get you up and running quickly:
+
+- [Neo4j Desktop](https://neo4j.com/download/) - FREE - Perfect for exploring [Neo4j](https://neo4j.com) on your local machine
+- [Neo4j Sandbox](https://sandbox.neo4j.com) - FREE - This allows you to run short-lived Neo4j projects in the cloud for free
+- [Neo4j Aura](https://neo4j.com/cloud/aura/) - \$ - This is [Neo4j](https://neo4j.com)'s flagship offering with a developer-friendly graph database as a service.
+
+All you will need is the bolt URL and the credentials to access your database.
+
+#### Sample data
+
+The original [https://github.com/grand-stack/grand-stack-starter](https://github.com/grand-stack/grand-stack-starter) had a helper script to seed your [Neo4j Database](https://neo4j.com) with example data. That same example database is available for you in a series of Cypher commands.
+
+Once you have connected to your [Neo4j Database](https://neo4j.com) with [Neo4j Browser](https://neo4j.com/developer/neo4j-browser/), simply copy the text as is from `app/neo4j/cypher/db.cypher` and execute the Cypher commands in a single action:
+
+![app/__screenshots__/neo4j-browser-01-paste-cypher.png](app/__screenshots__/neo4j-browser-01-paste-cypher.png)
+
+You can verify that your [Neo4j Database](https://neo4j.com) has been successfully created:
+
+![app/__screenshots__/neo4j-browser-02-example-database-from-seed.png](app/__screenshots__/neo4j-browser-02-example-database-from-seed.png)
+
+![app/__screenshots__/neo4j-browser-02a-example-database-from-seed-fullscreen-view.png](app/__screenshots__/neo4j-browser-02a-example-database-from-seed-fullscreen-view.png)
+
 ### Vercel
 
 This project has been configured to automatically deploy to [Vercel](https://vercel.com/) using the [Vercel for GitHub](https://vercel.com/github) integration.
@@ -190,17 +218,3 @@ NEO4J_PASSWORD=rewards-railroad-rowers
 Please refer to `app/.env.sample` to see the latest environment variables that you will need to declare in the event the above list is incomplete.
 
 Please see [https://vercel.com/docs/v2/build-step#environment-variables](https://vercel.com/docs/v2/build-step#environment-variables) and/or [https://nextjs.org/docs/basic-features/environment-variables](https://nextjs.org/docs/basic-features/environment-variables) for details on defining environment variables for your application on [Vercel](https://vercel.com/).
-
-##### EXAMPLE: Neo4j GRANDstack database seed
-
-The original [https://github.com/grand-stack/grand-stack-starter](https://github.com/grand-stack/grand-stack-starter) had a helper script to seed your [Neo4j Database](https://neo4j.com) with example data. That same example database is available for you in a series of Cypher commands.
-
-Once you have connected to your [Neo4j Database](https://neo4j.com) with [Neo4j Browser](https://neo4j.com/developer/neo4j-browser/), simply copy the text as is from `app/neo4j/cypher/db.cypher` and execute the Cypher commands in a single action:
-
-![app/__screenshots__/neo4j-browser-01-paste-cypher.png](app/__screenshots__/neo4j-browser-01-paste-cypher.png)
-
-You can verify that your [Neo4j Database](https://neo4j.com) has been successfully created:
-
-![app/__screenshots__/neo4j-browser-02-example-database-from-seed.png](app/__screenshots__/neo4j-browser-02-example-database-from-seed.png)
-
-![app/__screenshots__/neo4j-browser-02a-example-database-from-seed-fullscreen-view.png](app/__screenshots__/neo4j-browser-02a-example-database-from-seed-fullscreen-view.png)
