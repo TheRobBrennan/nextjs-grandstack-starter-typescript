@@ -30,8 +30,8 @@ const GET_DATA_QUERY = gql`
 
 const RatingsChart: FC = () => {
   const theme = useTheme()
-
   const { loading, error, data } = useQuery(GET_DATA_QUERY)
+
   if (error) return <p>Error</p>
   if (loading) return <p>Loading</p>
 
