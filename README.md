@@ -78,41 +78,58 @@ The following scripts are available at both the top level project directory as w
 - `npm run test:coverage` - Generates a code coverage report of the Jest tests
 
 ```sh
- PASS  __tests__/api/ping.test.ts
- PASS  apollo/type-defs.test.ts
  PASS  apollo/resolvers.test.ts
  PASS  analytics/google/googleAnalytics.test.ts
+ PASS  apollo/type-defs.test.ts
+ PASS  __tests__/api/ping.test.ts
  PASS  apollo/client.test.ts
- PASS  __tests__/index.test.tsx
  PASS  neo4j/db.test.ts
- PASS  apollo/schema.test.ts (6.365 s)
- PASS  __tests__/api/graphql.test.ts (6.979 s)
----------------------|---------|----------|---------|---------|-------------------
-File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
----------------------|---------|----------|---------|---------|-------------------
-All files            |     100 |      100 |     100 |     100 |
- analytics/google    |     100 |      100 |     100 |     100 |
-  googleAnalytics.ts |     100 |      100 |     100 |     100 |
- apollo              |     100 |      100 |     100 |     100 |
-  client.ts          |     100 |      100 |     100 |     100 |
-  resolvers.ts       |     100 |      100 |     100 |     100 |
-  schema.ts          |     100 |      100 |     100 |     100 |
-  type-defs.ts       |     100 |      100 |     100 |     100 |
- apollo/queries      |     100 |      100 |     100 |     100 |
-  hello.ts           |     100 |      100 |     100 |     100 |
- neo4j               |     100 |      100 |     100 |     100 |
-  db.ts              |     100 |      100 |     100 |     100 |
- pages               |     100 |      100 |     100 |     100 |
-  index.tsx          |     100 |      100 |     100 |     100 |
- pages/api           |     100 |      100 |     100 |     100 |
-  graphql.ts         |     100 |      100 |     100 |     100 |
-  ping.ts            |     100 |      100 |     100 |     100 |
----------------------|---------|----------|---------|---------|-------------------
+ PASS  apollo/schema.test.ts
+ PASS  __tests__/api/graphql.test.ts
+ PASS  __tests__/index.test.tsx
+------------------------------------------|---------|----------|---------|---------|-------------------
+File                                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+------------------------------------------|---------|----------|---------|---------|-------------------
+All files                                 |     100 |      100 |     100 |     100 |
+ analytics/google                         |     100 |      100 |     100 |     100 |
+  googleAnalytics.ts                      |     100 |      100 |     100 |     100 |
+ apollo                                   |     100 |      100 |     100 |     100 |
+  client.ts                               |     100 |      100 |     100 |     100 |
+  resolvers.ts                            |     100 |      100 |     100 |     100 |
+  schema.ts                               |     100 |      100 |     100 |     100 |
+  type-defs.ts                            |     100 |      100 |     100 |     100 |
+ apollo/queries                           |     100 |      100 |     100 |     100 |
+  hello.ts                                |     100 |      100 |     100 |     100 |
+ grandstack-demo/components/Dashboard     |     100 |      100 |     100 |     100 |
+  Dashboard.styles.tsx                    |     100 |      100 |     100 |     100 |
+  Dashboard.tsx                           |     100 |      100 |     100 |     100 |
+ grandstack-demo/components/RatingsChart  |     100 |      100 |     100 |     100 |
+  RatingsChart.tsx                        |     100 |      100 |     100 |     100 |
+ grandstack-demo/components/RecentReviews |     100 |      100 |     100 |     100 |
+  RecentReviews.tsx                       |     100 |      100 |     100 |     100 |
+ grandstack-demo/components/UserCount     |     100 |      100 |     100 |     100 |
+  UserCount.tsx                           |     100 |      100 |     100 |     100 |
+ grandstack-demo/layout                   |     100 |      100 |     100 |     100 |
+  Layout.styles.tsx                       |     100 |      100 |     100 |     100 |
+  Layout.tsx                              |     100 |      100 |     100 |     100 |
+ grandstack-demo/layout/Footer            |     100 |      100 |     100 |     100 |
+  Footer.tsx                              |     100 |      100 |     100 |     100 |
+ grandstack-demo/layout/Header            |     100 |      100 |     100 |     100 |
+  Header.styles.tsx                       |     100 |      100 |     100 |     100 |
+  Header.tsx                              |     100 |      100 |     100 |     100 |
+ neo4j                                    |     100 |      100 |     100 |     100 |
+  db.ts                                   |     100 |      100 |     100 |     100 |
+ pages                                    |     100 |      100 |     100 |     100 |
+  index.tsx                               |     100 |      100 |     100 |     100 |
+ pages/api                                |     100 |      100 |     100 |     100 |
+  graphql.ts                              |     100 |      100 |     100 |     100 |
+  ping.ts                                 |     100 |      100 |     100 |     100 |
+------------------------------------------|---------|----------|---------|---------|-------------------
 
 Test Suites: 9 passed, 9 total
 Tests:       37 passed, 37 total
 Snapshots:   0 total
-Time:        8.284 s
+Time:        6.364 s
 Ran all test suites.
 
 ```
@@ -172,30 +189,30 @@ If you do not have [Docker](https://www.docker.com) installed on your developmen
 
 If you already have `npm` and [Docker](https://www.docker.com) installed on your development system, simply run:
 
-Neo4j v3.5 - [Neo4j Browser](https://neo4j.com/developer/neo4j-browser/) available at [http://localhost:7474/browser/](http://localhost:7474/browser/)
+Neo4j v3.5.x - [Neo4j Browser](https://neo4j.com/developer/neo4j-browser/) available at [http://localhost:7474/browser/](http://localhost:7474/browser/)
 
 ```sh
 # Build the Docker infrastructure from scratch
-$ npm run docker:build       # Uses Neo4j v3.5
+$ npm run docker:build       # Uses Neo4j v3.5.x
 
 # Start the project
-$ npm run docker:start       # Uses Neo4j v3.5
+$ npm run docker:start       # Uses Neo4j v3.5.x
 
 # Stop the Docker containers from running
-$ npm run docker:stop       # Uses Neo4j v3.5
+$ npm run docker:stop       # Uses Neo4j v3.5.x
 ```
 
 Neo4j v4.0 - [Neo4j Browser](https://neo4j.com/developer/neo4j-browser/) available at [http://0.0.0.0:7474/browser/](http://0.0.0.0:7474/browser/)
 
 ```sh
 # Build the Docker infrastructure from scratch
-$ npm run docker:build:v4.0  # Uses Neo4j v4.0
+$ npm run docker:build:v4.x  # Uses Neo4j v4.x.x
 
 # Start the project
-$ npm run docker:start:v4.0  # Uses Neo4j v4.0
+$ npm run docker:start:v4.x  # Uses Neo4j v4.x.x
 
 # Stop the Docker containers from running
-$ npm run docker:stop:v4.0  # Uses Neo4j v4.0
+$ npm run docker:stop:v4.x  # Uses Neo4j v4.x.x
 ```
 
 In the default configuration, all data is ephemeral and will not be persisted. If you would like to persist [Neo4j Database](https://neo4j.com) data or settings, please refer to the appropriate Docker compose files for examples on how to accomplish this.
