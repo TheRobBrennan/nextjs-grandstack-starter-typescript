@@ -1,7 +1,7 @@
 import { NextPage } from "next"
-import GRANDstackDemoApp from "../grandstack-demo/App"
+import App from "../grandstack-demo/App"
 
 const DefaultPage: NextPage = () => {
-  return <GRANDstackDemoApp />
+  return <App />
 }
 export default DefaultPage
