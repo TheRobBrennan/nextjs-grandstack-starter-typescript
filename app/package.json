@@ -36,6 +36,8 @@
     "neo4j-driver": "^4.1.1",
     "neo4j-graphql-js": "^2.15.1",
     "next": "^9.5.2",
+    "next-compose-plugins": "^2.2.0",
+    "next-images": "^1.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
