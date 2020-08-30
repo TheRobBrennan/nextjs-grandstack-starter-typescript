@@ -13,7 +13,7 @@ import {
   Toolbar,
   Typography,
 } from "@material-ui/core"
-import Footer from "../components/Footer/Footer"
+import Footer from "./Footer/Footer"
 
 interface ILayout {
   children?: JSX.Element[] | JSX.Element | string | null
