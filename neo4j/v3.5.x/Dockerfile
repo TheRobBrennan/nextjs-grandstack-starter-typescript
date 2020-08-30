@@ -1,6 +1,5 @@
 FROM neo4j:3.5.21
 
-# Install curl
 RUN apt-get update; apt-get install curl -y
 
 ENV NEO4J_AUTH=neo4j/letmein \
