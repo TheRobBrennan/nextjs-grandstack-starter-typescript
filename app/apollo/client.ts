@@ -4,7 +4,6 @@ import { ApolloClient, InMemoryCache } from "@apollo/client"
 
 let apolloClient
 
-// TODO: Remove /* istanbul ignore next */
 function createIsomorphLink() {
   /* istanbul ignore next */
   if (typeof window === "undefined") {
