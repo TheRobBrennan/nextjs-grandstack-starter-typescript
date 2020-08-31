@@ -6,8 +6,8 @@ import gql from "graphql-tag"
 import Title from "../Title/Title"
 
 // Material UI
-import { useStyles } from "./UserList.styles"
-import { useTheme } from "@material-ui/core/styles"
+import { withStyles } from "@material-ui/core/styles"
+import { styles } from "./UserList.styles"
 import {
   Table,
   TableBody,
@@ -36,10 +36,12 @@ export const GET_USER_LIST = gql`
   }
 `
 
-const UserList: FC = () => {
-  const theme = useTheme()
-  const classes = useStyles(theme)
-  const [order, setOrder] = useState("asc")
+interface IUserList {
+  classes?: any
+}
+
+const UserList: FC<IUserList> = ({ classes }) => {
+  const [order, setOrder] = useState<SortDirectionStrings>("asc")
   const [orderBy, setOrderBy] = useState("name")
   const [page] = useState(0)
   const [rowsPerPage] = useState(10)
@@ -64,7 +66,7 @@ const UserList: FC = () => {
   /* istanbul ignore next */
   const handleSortRequest = (property) => {
     const newOrderBy = property
-    let newOrder = "desc"
+    let newOrder: SortDirectionStrings = "desc"
 
     if (orderBy === property && order === "desc") {
       newOrder = "asc"
@@ -171,4 +173,5 @@ const UserList: FC = () => {
     </Paper>
   )
 }
-export default UserList
+// @ts-ignore
+export default withStyles(styles)(UserList)
