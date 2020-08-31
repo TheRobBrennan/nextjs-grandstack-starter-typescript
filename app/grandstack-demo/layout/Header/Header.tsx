@@ -1,5 +1,6 @@
 import { FC } from "react"
 import Head from "next/head"
+import Link from "next/link"
 import clsx from "clsx"
 
 // Material UI
@@ -65,11 +66,13 @@ const Header: FC = () => {
       <CssBaseline />
       <AppBar position="absolute" className={clsx(classes.appBar)}>
         <Toolbar className={classes.toolbar}>
-          <img
-            className={classes.appBarImage}
-            src={APP_LOGO}
-            alt="GRANDstack logo"
-          />
+          <Link href="/" passHref>
+            <img
+              className={classes.appBarImage}
+              src={APP_LOGO}
+              alt="GRANDstack logo"
+            />
+          </Link>
           <Typography
             component="h1"
             variant="h6"
