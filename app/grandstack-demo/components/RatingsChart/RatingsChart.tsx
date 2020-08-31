@@ -19,7 +19,7 @@ import {
 } from "recharts"
 
 // GraphQL
-const GET_DATA_QUERY = gql`
+export const GET_DATA_QUERY = gql`
   {
     ratingsCount {
       stars
@@ -28,7 +28,12 @@ const GET_DATA_QUERY = gql`
   }
 `
 
-const RatingsChart: FC = () => {
+interface IRatingsChart {
+  width?: number | string
+  height?: number | string
+}
+
+const RatingsChart: FC<IRatingsChart> = ({ width, height }) => {
   const theme = useTheme()
   const { loading, error, data } = useQuery(GET_DATA_QUERY)
 
@@ -38,7 +43,10 @@ const RatingsChart: FC = () => {
   return (
     <>
       <Title>Ratings Distribution</Title>
-      <ResponsiveContainer>
+      <ResponsiveContainer
+        height={height ? height : "100%"}
+        width={width ? width : "100%"}
+      >
         <BarChart
           data={data.ratingsCount}
           margin={{
