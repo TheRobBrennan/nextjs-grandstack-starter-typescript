@@ -6,6 +6,8 @@ This project is a starter for building a [GRANDstack](https://grandstack.io) ([G
 
 ![app/__screenshots__/demo-nextjs-app.png](app/__screenshots__/demo-nextjs-app.png)
 
+![app/__screenshots__/demo-nextjs-app-users.png](app/__screenshots__/demo-nextjs-app-users.png)
+
 [DEMO: GraphQL explorer](https://nextjs-grandstack-starter-typescript.vercel.app/api/graphql)
 
 ![app/__screenshots__/demo-graphiql.png](app/__screenshots__/demo-graphiql.png)

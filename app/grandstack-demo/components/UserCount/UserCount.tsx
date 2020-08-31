@@ -31,7 +31,7 @@ const UserCount: FC = () => {
         users found
       </Typography>
       <div>
-        <Link href="/" passHref>
+        <Link href="/users" passHref>
           <a className={classes.navLink}>View users</a>
         </Link>
       </div>
