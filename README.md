@@ -29,6 +29,7 @@ $ npm run dev:v4
 
 You should be able to access the following URLs:
 
+- [http://0.0.0.0:7474/browser/](http://0.0.0.0:7474/browser/) - This is the Neo4j Browser application that you can use to explore your Neo4j database - as well as run Cypher commands to seed your database with example data
 - [http://localhost:3000](http://localhost:3000) - The frontend for our Next.js application
 - [http://localhost:3000/api/graphql](http://localhost:3000/api/graphql) - The GraphIQL explorer for our backend Next.js API which will be a serverless GraphQL function on Vercel
 - [http://localhost:3000/api/ping](http://localhost:3000/api/ping) - A sample API route that will be a serverless function on Vercel
