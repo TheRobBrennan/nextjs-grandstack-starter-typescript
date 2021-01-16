@@ -1,5 +1,29 @@
 # GRANDstack Starter for Next.js with TypeScript
 
+**What's new in 2021?**
+
+A lot. 🎉
+
+On Thursday, January 14th, 2021, Neo4j had a big announcement in their GraphQL Community Call.
+
+As part of the initial [GRANDstack](https://grandstack.io) ([GraphQL](https://graphql.org), [React](https://reactjs.org), [Apollo](https://www.apollographql.com), [Neo4j Database](https://neo4j.com)) offering, Neo4j labs had created [https://github.com/neo4j-graphql/neo4j-graphql-js](https://github.com/neo4j-graphql/neo4j-graphql-js) - enabling developers to build a GraphQL API layer on top of an already existing Neo4j database and the Cypher query language.
+
+Neo4j has announced this effort is graduating from a labs project into a fully supported Neo4j product for the GraphQL layer - `@neo4j/graphql`
+
+This was a huge announcement; and I would encourage you to review the community call and materials below.
+
+`@neo4j/graphql` is currently in early alpha release and is available NOW.
+
+Useful resources
+
+- [Neo4j GraphQL Community Call - January 2021](https://www.youtube.com/watch?v=Og2I2K21MdI)
+- [Slide deck for the Community Call](https://docs.google.com/presentation/d/1GfdFUpYguMBUtWrrjSynGrJBkqfzHZYvffYScPltnDE/edit#slide=id.gb270d1e6e4_1_119)
+- [@neo4j/graphql on npm](https://www.npmjs.com/package/@neo4j/graphql)
+  - [https://github.com/neo4j/graphql-tracker-temp](https://github.com/neo4j/graphql-tracker-temp) - This is the temporary repo where you can submit issues, etc.
+- [Neo4j on Slack](http://neo4j-users-slack-invite.herokuapp.com)
+
+---
+
 This project is a starter for building a [GRANDstack](https://grandstack.io) ([GraphQL](https://graphql.org), [React](https://reactjs.org), [Apollo](https://www.apollographql.com), [Neo4j Database](https://neo4j.com)) application using [Next.js](https://nextjs.org) and [TypeScript](https://www.typescriptlang.org) instead of the original [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html) example available at [https://github.com/grand-stack/grand-stack-starter](https://github.com/grand-stack/grand-stack-starter).
 
 ![app/__screenshots__/nextjs-frontend-default-page.png](app/__screenshots__/nextjs-frontend-default-page.png)
@@ -156,7 +180,7 @@ You can verify that your [Neo4j Database](https://neo4j.com) has been successful
 
 ### Vercel
 
-This project has been configured to automatically deploy to [Vercel](https://vercel.com/) using the [Vercel for GitHub](https://vercel.com/github) integration.
+This project is ready to be configured for deployment to [Vercel](https://vercel.com/), as well as optionally using the [Vercel for GitHub](https://vercel.com/github) integration for automatic deployment.
 
 #### Environment variables
 
@@ -178,56 +202,3 @@ NEO4J_PASSWORD=rewards-railroad-rowers
 Please refer to `app/.env.sample` to see the latest environment variables that you will need to declare if the above list is incomplete.
 
 Please see [https://vercel.com/docs/v2/build-step#environment-variables](https://vercel.com/docs/v2/build-step#environment-variables) and/or [https://nextjs.org/docs/basic-features/environment-variables](https://nextjs.org/docs/basic-features/environment-variables) for details on defining environment variables for your application on [Vercel](https://vercel.com/).
-
-## REFERENCE: Create a Next.js app from scratch
-
-```sh
-# Navigate to your desired directory (such as app)
-$ cd app
-
-# Use npm init to create a package.json with typical values for your app
-$ npm init
-
-# Install required Next.js and React dependencies
-$ npm install next react react-dom
-
-# Create a pages directory
-$ mkdir pages
-
-# Create a default page
-$ cd pages
-$ touch index.js
-```
-
-Create a simple default page:
-
-```jsx
-// app/pages/index.js
-const DefaultPage = () => {
-  return <div>Welcome to Next.js!</div>
-}
-
-export default DefaultPage
-```
-
-Once you have created the default page, you can now run your app with `$ npm run dev`
-
-You should be able to view your application at [http://localhost:3000](http://localhost:3000). 🤓
-
-### Add TypeScript
-
-To add [TypeScript](https://www.typescriptlang.org) to your [Next.js](https://nextjs.org) app:
-
-```sh
-# Navigate to your app directory
-$ cd app
-
-# Install TypeScript dev dependencies
-$ npm i -D typescript @types/react @types/node
-
-# Create an empty tsconfig.json file
-$ touch tsconfig.json
-
-# Run your app, and Next.js will automatically discover and configure TypeScript for you
-$ npm run dev
-```
