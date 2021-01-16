@@ -1,5 +1,29 @@
 # GRANDstack Starter for Next.js with TypeScript
 
+**What's new in 2021?**
+
+A lot. 🎉
+
+On Thursday, January 14th, 2021, Neo4j had a big announcement in their GraphQL Community Call.
+
+As part of the initial GRANDstack offering, Neo4j labs had created [https://github.com/neo4j-graphql/neo4j-graphql-js](https://github.com/neo4j-graphql/neo4j-graphql-js) - enabling developers to build a GraphQL API layer on top of the already existing Neo4j database and the Cypher query language.
+
+Neo4j has announced they will officially create a product for the GraphQL layer - `@neo4j/graphql`
+
+This was a huge announcement - and well worth reviewing the community call and materials below.
+
+`@neo4j/graphql` is currently in early alpha release and is available NOW.
+
+Useful resources
+
+- [Neo4j GraphQL Community Call - January 2021](https://www.youtube.com/watch?v=Og2I2K21MdI)
+- [Slide deck for the Community Call](https://docs.google.com/presentation/d/1GfdFUpYguMBUtWrrjSynGrJBkqfzHZYvffYScPltnDE/edit#slide=id.gb270d1e6e4_1_119)
+- [@neo4j/graphql on npm](https://www.npmjs.com/package/@neo4j/graphql)
+  - [https://github.com/neo4j/graphql-tracker-temp](https://github.com/neo4j/graphql-tracker-temp) - This is the temporary repo where you can submit issues, etc.
+- [Neo4j on Slack](http://neo4j-users-slack-invite.herokuapp.com)
+
+---
+
 This project is a starter for building a [GRANDstack](https://grandstack.io) ([GraphQL](https://graphql.org), [React](https://reactjs.org), [Apollo](https://www.apollographql.com), [Neo4j Database](https://neo4j.com)) application using [Next.js](https://nextjs.org) and [TypeScript](https://www.typescriptlang.org) instead of the original [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html) example available at [https://github.com/grand-stack/grand-stack-starter](https://github.com/grand-stack/grand-stack-starter).
 
 ![app/__screenshots__/nextjs-frontend-default-page.png](app/__screenshots__/nextjs-frontend-default-page.png)
