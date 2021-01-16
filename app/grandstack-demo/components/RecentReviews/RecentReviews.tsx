@@ -33,8 +33,8 @@ export const GET_RECENT_REVIEWS_QUERY = gql`
 
 const RecentReviews: FC = () => {
   const { loading, error, data } = useQuery(GET_RECENT_REVIEWS_QUERY)
-  if (error) return <p>{error.message}</p>
   if (loading) return <p>Loading</p>
+  if (error) return <p>{error.message}</p>
 
   return (
     <>
