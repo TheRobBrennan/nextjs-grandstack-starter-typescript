@@ -1,7 +1,6 @@
 import { FC } from "react"
 import { useQuery } from "@apollo/react-hooks"
 import gql from "graphql-tag"
-import Link from "next/link"
 
 // Components
 import Title from "../Title/Title"
@@ -30,11 +29,6 @@ const UserCount: FC = () => {
       <Typography color="textSecondary" className={classes.depositContext}>
         users found
       </Typography>
-      <div>
-        <Link href="/users" passHref>
-          <a className={classes.navLink}>View users</a>
-        </Link>
-      </div>
     </>
   )
 }
