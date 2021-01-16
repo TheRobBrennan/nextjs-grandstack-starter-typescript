@@ -1,8 +1,8 @@
-// Clear any defined constraints
-DROP CONSTRAINT ON (node:User) ASSERT (node.userId) IS UNIQUE;
-DROP CONSTRAINT ON (node:Category) ASSERT (node.name) IS UNIQUE;
-DROP CONSTRAINT ON (node:Review) ASSERT (node.reviewId) IS UNIQUE;
-DROP CONSTRAINT ON (node:Business) ASSERT (node.businessId) IS UNIQUE;
+// OPTIONAL: Clear previously defined constraints
+// DROP CONSTRAINT ON (node:User) ASSERT (node.userId) IS UNIQUE;
+// DROP CONSTRAINT ON (node:Category) ASSERT (node.name) IS UNIQUE;
+// DROP CONSTRAINT ON (node:Review) ASSERT (node.reviewId) IS UNIQUE;
+// DROP CONSTRAINT ON (node:Business) ASSERT (node.businessId) IS UNIQUE;
 
 // Generated using "CALL apoc.export.cypher.all(null);" in Cypher to export all Cypher statements in a single row in the cypherStatements column based on the original GRANDstack Database Seed creation
 CREATE CONSTRAINT ON (node:User) ASSERT (node.userId) IS UNIQUE;
