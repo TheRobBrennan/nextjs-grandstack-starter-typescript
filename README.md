@@ -68,7 +68,7 @@ The following scripts are available at both the top level project directory as w
 
 ![app/__screenshots__/jest-coverage-report-html.png](app/__screenshots__/jest-coverage-report-html.png)
 
-- `npm run test:watch` - Runs Jest in `--watch` mode; running tests related to current code changes and not the entire suite
+- `npm run test:watch` - **This is the only test script that runs locally.** It runs Jest in `--watch` mode; running tests related to current code changes and not the entire suite
 
 ## Bundle analysis
 
