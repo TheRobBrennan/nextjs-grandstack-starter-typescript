@@ -13,8 +13,8 @@ describe("Our GraphQL resolvers should contain", () => {
       it("that has been defined", () => {
         expect(hello).toBeDefined()
       })
-      it("that returns a string when executed", () => {
-        const result = hello(null, null, null)
+      it("that returns a string when executed", async () => {
+        const result = await hello(null, null, null)
         expect(typeof result).toEqual("string")
       })
     })

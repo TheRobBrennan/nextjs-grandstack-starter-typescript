@@ -1,4 +1,4 @@
-import neo4j from "neo4j-driver"
+import * as neo4j from "neo4j-driver"
 
 // Neo4j Desktop settings
 export const DEFAULT_NEO4J_DESKTOP = {

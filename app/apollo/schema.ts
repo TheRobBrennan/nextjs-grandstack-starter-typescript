@@ -1,4 +1,4 @@
-import { makeAugmentedSchema } from "neo4j-graphql-js"
+import { makeAugmentedSchema } from "@neo4j/graphql"
 import { typeDefs } from "./type-defs"
 import { resolvers } from "./resolvers"
 

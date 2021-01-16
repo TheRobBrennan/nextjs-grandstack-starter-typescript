@@ -1,5 +1,31 @@
 // Describe our GraphQL schema with type definitions
 export const typeDefs = `
+  type Movie {
+    title: String
+    year: Int
+    imdbRating: Float
+    genres: [Genre] @relationship(type: "IN_GENRE", direction: "OUT")
+  }
+
+  type Genre {
+    name: String
+    movies: [Movie] @relationship(type: "IN_GENRE", direction: "IN")
+  }
+
+  type Query {
+    """
+    A sample query to verify that our GraphQL server is online.
+
+    It returns a friendly greeting with the current timestamp.
+    """
+    hello: String!,
+  }
+
+`
+
+// EXAMPLE: This is what the deprecated Neo4j labs implementation used for typeDefs
+//          https://github.com/neo4j-graphql/neo4j-graphql-js
+const typeDefsForNeo4jGraphqlJs = `
   type User {
     userId: ID!
     name: String
