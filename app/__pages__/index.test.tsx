@@ -1,16 +1,17 @@
 import React from "react"
-import { mount } from "enzyme"
+import TestRenderer from "react-test-renderer"
 
 import DefaultPage from "../pages/index"
 import { MockedProvider } from "@apollo/client/testing"
 
 describe("The default page", () => {
   it(`should render`, () => {
-    const subject = mount(
-      <MockedProvider>
+    // Verify success state
+    const component = TestRenderer.create(
+      <MockedProvider mocks={[]} addTypename={false}>
         <DefaultPage />
       </MockedProvider>
     )
-    expect(subject).toBeDefined()
+    expect(component).toBeDefined()
   })
 })
