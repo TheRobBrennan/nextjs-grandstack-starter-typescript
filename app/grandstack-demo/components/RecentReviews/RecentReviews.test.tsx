@@ -417,7 +417,7 @@ describe("GRANDstack RecentReviews component", () => {
   })
 
   describe("should display an error message if", () => {
-    it("we receive an error attempting a network request", async () => {
+    it("there is a network request failure", async () => {
       // Define our Apollo request
       const renderRequest = {
         request: {
@@ -448,7 +448,7 @@ describe("GRANDstack RecentReviews component", () => {
       const tree = component.toJSON()
       expect(tree.children).toContain("Simulated network or HTTP error")
     })
-    it("our GraphQL server received our request and has returned with one or more error(s) in the result", async () => {
+    it("our GraphQL server successfully processed our request and has returned with one or more error(s) in the result", async () => {
       // Define our Apollo request
       const renderRequest = {
         request: {
@@ -456,6 +456,8 @@ describe("GRANDstack RecentReviews component", () => {
           variables: {},
         },
         result: {
+          // REVISIT: Create a pull request - errors should be able to be defined on the GraphQL result object because it can contain data and errors
+          //          https://www.apollographql.com/docs/react/development-testing/testing/#graphql-errors
           errors: [
             new Error("Simulated GraphQL server response with an error"),
           ],
