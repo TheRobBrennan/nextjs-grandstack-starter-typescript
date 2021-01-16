@@ -111,44 +111,6 @@ This project has an example [Apollo GraphQL](https://www.apollographql.com) serv
 
 If you are running this project locally, you can view the [GraphIQL IDE](http://localhost:3000/api/graphql) at [http://localhost:3000/api/graphql](http://localhost:3000/api/graphql)
 
-### Docker
-
-If you would like to have your [Neo4j Database](https://neo4j.com) running in a [Docker](https://www.docker.com) environment, you can easily build, start, and stop versions of [Neo4j Database](https://neo4j.com) to your heart's content!
-
-To run this example, all you need to have installed on your system is [Docker](https://www.docker.com) and `npm` installed on your development system - which is automatically included if you downloaded and installed [Node.js](https://nodejs.org/).
-
-If you do not have [Docker](https://www.docker.com) installed on your development system, go to freely available [Docker Desktop](https://www.docker.com/products/docker-desktop) and get that installed and configured on your development machine.
-
-If you already have `npm` and [Docker](https://www.docker.com) installed on your development system, simply run:
-
-Neo4j v3.5.x - [Neo4j Browser](https://neo4j.com/developer/neo4j-browser/) available at [http://localhost:7474/browser/](http://localhost:7474/browser/)
-
-```sh
-# Build the Docker infrastructure from scratch
-$ npm run docker:build       # Uses Neo4j v3.5.x
-
-# Start the project
-$ npm run docker:start       # Uses Neo4j v3.5.x
-
-# Stop the Docker containers from running
-$ npm run docker:stop       # Uses Neo4j v3.5.x
-```
-
-Neo4j v4.0 - [Neo4j Browser](https://neo4j.com/developer/neo4j-browser/) available at [http://0.0.0.0:7474/browser/](http://0.0.0.0:7474/browser/)
-
-```sh
-# Build the Docker infrastructure from scratch
-$ npm run docker:build:v4.x  # Uses Neo4j v4.x.x
-
-# Start the project
-$ npm run docker:start:v4.x  # Uses Neo4j v4.x.x
-
-# Stop the Docker containers from running
-$ npm run docker:stop:v4.x  # Uses Neo4j v4.x.x
-```
-
-In the default configuration, all data is ephemeral and will not be persisted. If you would like to persist [Neo4j Database](https://neo4j.com) data or settings, please refer to the appropriate Docker compose files for examples on how to accomplish this.
-
 ### Google Analytics
 
 This project uses [Google Analytics](http://analytics.google.com) to track user interactions and evaluate the usage of the application.
