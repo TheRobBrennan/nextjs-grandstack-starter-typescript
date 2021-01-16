@@ -16,15 +16,14 @@ import {
 
 export const GET_RECENT_REVIEWS_QUERY = gql`
   {
-    Review(first: 10, orderBy: date_desc) {
+    Reviews {
+      date
       user {
+        userId
         name
       }
       business {
         name
-      }
-      date {
-        formatted
       }
       text
       stars
@@ -44,20 +43,24 @@ const RecentReviews: FC = () => {
         <TableHead>
           <TableRow>
             <TableCell>Date</TableCell>
-            <TableCell>Business Name</TableCell>
-            <TableCell>User Name</TableCell>
-            <TableCell>Review Text</TableCell>
-            <TableCell align="right">Review Stars</TableCell>
+            <TableCell>Business</TableCell>
+            <TableCell>User</TableCell>
+            <TableCell>Review</TableCell>
+            <TableCell align="right">Stars</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.Review.map((row) => (
-            <TableRow key={`${row.user.name}-${row.date.formatted}`}>
-              <TableCell>{row.date.formatted}</TableCell>
-              <TableCell>{row.business.name}</TableCell>
-              <TableCell>{row.user.name}</TableCell>
-              <TableCell>{row.text}</TableCell>
-              <TableCell align="right">{row.stars}</TableCell>
+          {data?.Reviews.map((review) => (
+            <TableRow
+              key={`${review?.user?.name}-${review?.user?.userId}-${review?.date?.year?.low}-${review?.date?.month?.low}-${review?.date?.day?.low}`}
+            >
+              <TableCell>
+                {`${review?.date?.year?.low}.${review?.date?.month?.low}.${review?.date?.day?.low}`}
+              </TableCell>
+              <TableCell>{review?.business?.name}</TableCell>
+              <TableCell>{review?.user?.name}</TableCell>
+              <TableCell>{review?.text}</TableCell>
+              <TableCell align="right">{review?.stars?.low}</TableCell>
             </TableRow>
           ))}
         </TableBody>
