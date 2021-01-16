@@ -1,5 +1,8 @@
-// Make sure we're using the default database if we're using Neo4j v4.0. This command will simply generate a warning if you're using Neo4j v3.5 but will still allow the Cypher script to execute as intended.
-:use neo4j;
+// Clear any defined constraints
+DROP CONSTRAINT ON (node:User) ASSERT (node.userId) IS UNIQUE;
+DROP CONSTRAINT ON (node:Category) ASSERT (node.name) IS UNIQUE;
+DROP CONSTRAINT ON (node:Review) ASSERT (node.reviewId) IS UNIQUE;
+DROP CONSTRAINT ON (node:Business) ASSERT (node.businessId) IS UNIQUE;
 
 // Generated using "CALL apoc.export.cypher.all(null);" in Cypher to export all Cypher statements in a single row in the cypherStatements column based on the original GRANDstack Database Seed creation
 CREATE CONSTRAINT ON (node:User) ASSERT (node.userId) IS UNIQUE;
