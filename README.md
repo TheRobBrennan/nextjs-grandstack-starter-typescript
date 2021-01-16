@@ -26,14 +26,22 @@ Useful resources
 
 This project is a starter for building a [GRANDstack](https://grandstack.io) ([GraphQL](https://graphql.org), [React](https://reactjs.org), [Apollo](https://www.apollographql.com), [Neo4j Database](https://neo4j.com)) application using [Next.js](https://nextjs.org) and [TypeScript](https://www.typescriptlang.org) instead of the original [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html) example available at [https://github.com/grand-stack/grand-stack-starter](https://github.com/grand-stack/grand-stack-starter).
 
-![app/__screenshots__/nextjs-frontend-default-page.png](app/__screenshots__/nextjs-frontend-default-page.png)
-
 ## Getting started
 
 To run this application as intended, you will need to:
 
 - Build and run the Dockerized project
 - Seed your Neo4j database with sample data
+
+### DEMO
+
+![app/__screenshots__/nextjs-frontend-default-page.png](app/__screenshots__/nextjs-frontend-default-page.png)
+
+A [demo](https://nextjs-grandstack-starter-typescript.vercel.app/) application has been deployed using a free [Neo4j Sandbox](https://sandbox.neo4j.com) as the backend database at [https://nextjs-grandstack-starter-typescript.vercel.app/]
+
+Please note that these sandboxes do not last forever - ten (10) days at most with active renewal and upkeep.
+
+TL:DR If the demo app is broken, that's why. You can run this locally to your heart's content. 🤣
 
 ### Build and run the Dockerized project
 
@@ -157,7 +165,7 @@ Once you have defined the environment variables - either in `app/.env` for local
 [Neo4j](https://neo4j.com) has three options to get you up and running quickly:
 
 - [Neo4j Desktop](https://neo4j.com/download/) - FREE - Perfect for exploring [Neo4j](https://neo4j.com) on your local machine
-- [Neo4j Sandbox](https://sandbox.neo4j.com) - FREE - This allows you to run short-lived Neo4j projects in the cloud for free
+- [Neo4j Sandbox](https://sandbox.neo4j.com) - FREE - This allows you to run short-lived Neo4j projects in the cloud for free. By default, Neo4j sandboxes will terminate after three (3) days; however you do have the ability to optionally extend for another seven (7) days if desired.
 - [Neo4j Aura](https://neo4j.com/cloud/aura/) - \$ - This is [Neo4j](https://neo4j.com)'s flagship offering with a developer-friendly graph database as a service.
 
 All you will need is the bolt URL and the credentials to access your database.
@@ -188,9 +196,9 @@ We can define the environment variables we would like to use for our `Production
 
 ```sh
 GOOGLE_ANALYTICS_TRACKING_ID=UA-156456153-7
-NEO4J_URI=bolt://18.207.112.93:33129
+NEO4J_URI=bolt://54.167.150.120:32844
 NEO4J_USER=neo4j
-NEO4J_PASSWORD=rewards-railroad-rowers
+NEO4J_PASSWORD=
 
 # Enable encrypted driver connection for Neo4j
 #NEO4J_ENCRYPTED=true
