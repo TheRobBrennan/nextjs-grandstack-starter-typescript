@@ -2,71 +2,54 @@
 
 This project is a starter for building a [GRANDstack](https://grandstack.io) ([GraphQL](https://graphql.org), [React](https://reactjs.org), [Apollo](https://www.apollographql.com), [Neo4j Database](https://neo4j.com)) application using [Next.js](https://nextjs.org) and [TypeScript](https://www.typescriptlang.org) instead of the original [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html) example available at [https://github.com/grand-stack/grand-stack-starter](https://github.com/grand-stack/grand-stack-starter).
 
-[DEMO: Next.js GRANDstack app](https://nextjs-grandstack-starter-typescript.vercel.app)
-
-![app/__screenshots__/demo-nextjs-app.png](app/__screenshots__/demo-nextjs-app.png)
-
-![app/__screenshots__/demo-nextjs-app-users.png](app/__screenshots__/demo-nextjs-app-users.png)
-
-[DEMO: GraphQL explorer](https://nextjs-grandstack-starter-typescript.vercel.app/api/graphql)
-
-![app/__screenshots__/demo-graphiql.png](app/__screenshots__/demo-graphiql.png)
-
 ## Getting started
 
-### Create a Next.js app from scratch
+In order to run this application as intended, you will need to:
+
+- Build and run the Dockerized project
+- Seed your Neo4j database with sample data
+
+### Build and run the Dockerized project
+
+If you would like to have your [Next.js](https://nextjs.org) application and [Neo4j Database](https://neo4j.com) running in a [Docker](https://www.docker.com) environment, you can easily build, start, and stop versions of [Neo4j Database](https://neo4j.com) to your heart's content!
+
+To run this example, all you need to have installed on your system is [Docker](https://www.docker.com) and `npm` installed on your development system - which is automatically included if you downloaded and installed [Node.js](https://nodejs.org/).
+
+If you do not have [Docker](https://www.docker.com) installed on your development system, go to freely available [Docker Desktop](https://www.docker.com/products/docker-desktop) and get that installed and configured on your development machine.
+
+If you already have `npm` and [Docker](https://www.docker.com) installed on your development system, simply run:
 
 ```sh
-# Navigate to your desired directory (such as app)
-$ npm init  # Creates a package.json with common values for your app
-
-# Install required Next.js and React dependencies
-$ npm install next react react-dom
-
-# Create a pages directory
-$ mkdir pages
-
-# Create a default page
-$ cd pages
-$ touch index.js
-```
-
-Create a simple default page:
-
-```jsx
-// app/pages/index.js
-const DefaultPage = () => {
-  return <div>Welcome to Next.js!</div>
-}
-
-export default DefaultPage
-```
-
-Once you have created the default page, you can now run your app with:
-
-```sh
+# Run the project using Neo4j v3.5.x
 $ npm run dev
+
+# ALTERNATIVE: Run the project using Neo4j v4.x.x
+$ npm run dev:v4
 ```
 
-You should be able to view your application at [http://localhost:3000](http://localhost:3000). 🤓
+The follow additional scripts have been created for managing your Docker environment based on the version of Neo4j you are using.
 
-### TypeScript
+Neo4j v3.5.x:
 
-To add [TypeScript](https://www.typescriptlang.org) to your [Next.js](https://nextjs.org) app:
+- `dev` - This starts the Dockerized project with services defined in `docker-compose.yml`
+- `dev:clean` - This builds fresh images and containers for the Dockerized project with services defined in `docker-compose.yml`
+- `dev:stop` - This stops the Dockerized project with services defined in `docker-compose.yml`
 
-```sh
-# Navigate to your app directory
-$ cd app
+Neo4j v4.x.x:
 
-# Install TypeScript dev dependencies
-$ npm i -D typescript @types/react @types/node
+- `dev:v4` - This starts the Dockerized project with services defined in `docker-compose.yml` and layers `docker-compose-add-neo4j-v4.x.yml` on top so that `Neo4j v4.x.x` is used
+- `dev:v4:clean` - This builds fresh images and containers for the Dockerized project with services defined in `docker-compose.yml` and layers `docker-compose-add-neo4j-v4.x.yml` on top so that `Neo4j v4.x.x` is used
+- `dev:v4:stop` - This stops the Dockerized project with services defined in `docker-compose.yml` and `docker-compose-add-neo4j-v4.x.yml`
 
-# Create an empty tsconfig.json file
-$ touch tsconfig.json
+Docker
 
-# Run your app and Next.js will automatically discover and configure TypeScript for you
-$ npm run dev
-```
+- `docker:destroy:global` - **WARNING: This command will delete all Docker images, containers, networks, and volumes for ALL Dockerized applications on your system**
+
+### Seed your Neo4j database with sample data
+
+Once your Dockerized project is running, you can navigate to the [Neo4j Browser](https://neo4j.com/developer/neo4j-browser/) at [http://0.0.0.0:7474/browser/](http://0.0.0.0:7474/browser/).
+
+Open up `./app/neo4j/__seed__/db.cypher` so you can copy and paste the example Cypher statements into the Cypher window and press `play` to seed your database with example data.
 
 ## Tests
 
@@ -97,7 +80,7 @@ This project uses the [Next.js + Webpack Bundle Analyzer](https://github.com/ver
 
 ## Static files
 
-The `public` folder in your [Next.js](https://nextjs.org) app can be used to serve whatever assets you desire (e.g. `app/public/logo.png` would be available at http://localhost:3000/logo.png)
+The `public` folder in your [Next.js](https://nextjs.org) app can be used to serve whatever assets you desire (e.g. `app/public/logo.png` would be available at [http://localhost:3000/logo.png](http://localhost:3000/logo.png))
 
 ## Back-end API
 
@@ -220,3 +203,56 @@ NEO4J_PASSWORD=rewards-railroad-rowers
 Please refer to `app/.env.sample` to see the latest environment variables that you will need to declare in the event the above list is incomplete.
 
 Please see [https://vercel.com/docs/v2/build-step#environment-variables](https://vercel.com/docs/v2/build-step#environment-variables) and/or [https://nextjs.org/docs/basic-features/environment-variables](https://nextjs.org/docs/basic-features/environment-variables) for details on defining environment variables for your application on [Vercel](https://vercel.com/).
+
+## REFERENCE: Create a Next.js app from scratch
+
+```sh
+# Navigate to your desired directory (such as app)
+$ cd app
+
+# Use npm init to create a package.json with common values for your app
+$ npm init
+
+# Install required Next.js and React dependencies
+$ npm install next react react-dom
+
+# Create a pages directory
+$ mkdir pages
+
+# Create a default page
+$ cd pages
+$ touch index.js
+```
+
+Create a simple default page:
+
+```jsx
+// app/pages/index.js
+const DefaultPage = () => {
+  return <div>Welcome to Next.js!</div>
+}
+
+export default DefaultPage
+```
+
+Once you have created the default page, you can now run your app with `$ npm run dev`
+
+You should be able to view your application at [http://localhost:3000](http://localhost:3000). 🤓
+
+### Add TypeScript
+
+To add [TypeScript](https://www.typescriptlang.org) to your [Next.js](https://nextjs.org) app:
+
+```sh
+# Navigate to your app directory
+$ cd app
+
+# Install TypeScript dev dependencies
+$ npm i -D typescript @types/react @types/node
+
+# Create an empty tsconfig.json file
+$ touch tsconfig.json
+
+# Run your app and Next.js will automatically discover and configure TypeScript for you
+$ npm run dev
+```
