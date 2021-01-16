@@ -9,10 +9,15 @@ services:
       - 7473:7473 # HTTPS
       - 7687:7687 # Bolt
     environment:
+      # See https://neo4j.com/docs/operations-manual/current/docker/configuration/ for the naming convention for NEO4J settings
+      #   As an example, dbms.tx_log.rotation.size would be NEO4J_dbms_tx__log_rotation_size
       - NEO4J_dbms_security_procedures_unrestricted=apoc.*
       - NEO4J_apoc_import_file_enabled=true
       - NEO4J_apoc_export_file_enabled=true
       - NEO4J_dbms_shell_enabled=true
+
+      # Please set 'dbms.allow_upgrade' to 'true' in your configuration file and try again. Detailed description: Upgrade is required to migrate store to new major version.
+      - NEO4J_dbms_allow__upgrade=true
 
     # Uncomment the following section if you want to persist Neo4j settings and data
     # volumes:
