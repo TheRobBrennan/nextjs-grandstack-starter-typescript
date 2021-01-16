@@ -4,20 +4,20 @@ This project is a starter for building a [GRANDstack](https://grandstack.io) ([G
 
 ## Getting started
 
-In order to run this application as intended, you will need to:
+To run this application as intended, you will need to:
 
 - Build and run the Dockerized project
 - Seed your Neo4j database with sample data
 
 ### Build and run the Dockerized project
 
-If you would like to have your [Next.js](https://nextjs.org) application and [Neo4j Database](https://neo4j.com) running in a [Docker](https://www.docker.com) environment, you can easily build, start, and stop versions of [Neo4j Database](https://neo4j.com) to your heart's content!
+If you would like to have your [Next.js](https://nextjs.org) application and [Neo4j Database](https://neo4j.com) running in a [Docker](https://www.docker.com) environment, you can quickly build, start, and stop versions of [Neo4j Database](https://neo4j.com) to your heart's content!
 
-To run this example, all you need to have installed on your system is [Docker](https://www.docker.com) and `npm` installed on your development system - which is automatically included if you downloaded and installed [Node.js](https://nodejs.org/).
+To run this example, all you need to have installed on your system is [Docker](https://www.docker.com) and `npm` installed on your development system.
 
 If you do not have [Docker](https://www.docker.com) installed on your development system, go to freely available [Docker Desktop](https://www.docker.com/products/docker-desktop) and get that installed and configured on your development machine.
 
-If you already have `npm` and [Docker](https://www.docker.com) installed on your development system, simply run:
+If you already have `npm` and [Docker](https://www.docker.com) installed on your development system, run:
 
 ```sh
 # Run the project using Neo4j v3.5.x
@@ -27,7 +27,7 @@ $ npm run dev
 $ npm run dev:v4
 ```
 
-The follow additional scripts have been created for managing your Docker environment based on the version of Neo4j you are using.
+Additionally, the following scripts have been created for managing your Docker environment based on the version of Neo4j you are using.
 
 Neo4j v3.5.x:
 
@@ -55,7 +55,7 @@ Open up `./app/neo4j/__seed__/db.cypher` so you can copy and paste the example C
 
 This project uses [Jest](https://jestjs.io/) and [Enzyme](https://enzymejs.github.io/enzyme/) for unit and integration tests.
 
-The following scripts are available at both the top level project directory as well as the `app` directory:
+The following scripts are available at both the top-level project directory as well as the `app` directory:
 
 - `npm run test` or `npm test` - This runs a single run of the Jest tests for our project.
 - `npm run test:ci` - Useful for running Jest tests in a continuous integration (CI) environment
@@ -64,7 +64,7 @@ The following scripts are available at both the top level project directory as w
 
 ![app/__screenshots__/jest-coverage-report-cli.png](app/__screenshots__/jest-coverage-report-cli.png)
 
-- `npm run test:coverage:view` - Generates a code coverage report of the Jest tests and automatically launches a web browser on macOS/linux to interactively see what code is and is not being covered in tests
+- `npm run test:coverage:view` - Generates a code coverage report of the Jest tests and automatically launches a web browser on macOS/Linux to interactively see what code is and is not being covered in tests
 
 ![app/__screenshots__/jest-coverage-report-html.png](app/__screenshots__/jest-coverage-report-html.png)
 
@@ -113,7 +113,7 @@ If you are running this project locally, you can view the [GraphIQL IDE](http://
 
 ### Google Analytics
 
-This project uses [Google Analytics](http://analytics.google.com) to track user interactions and evaluate the usage of the application.
+This project uses [Google Analytics](http://analytics.google.com) to track user interactions and evaluate the application's usage.
 
 ### Neo4j
 
@@ -149,7 +149,7 @@ This project has been configured to automatically deploy to [Vercel](https://ver
 
 #### Environment variables
 
-We can define the environment variables we would like to use for our `Production`, `Preview`, and `Development` environments. Navigate to your [Vercel](https://vercel.com/) project settings and define the following environment variables:
+We can define the environment variables we would like to use for our `Production,` `Preview,` and `Development` environments. Navigate to your [Vercel](https://vercel.com/) project settings and define the following environment variables:
 
 ```sh
 GOOGLE_ANALYTICS_TRACKING_ID=UA-156456153-7
@@ -164,7 +164,7 @@ NEO4J_PASSWORD=rewards-railroad-rowers
 #NEO4J_DATABASE=neo4j
 ```
 
-Please refer to `app/.env.sample` to see the latest environment variables that you will need to declare in the event the above list is incomplete.
+Please refer to `app/.env.sample` to see the latest environment variables that you will need to declare if the above list is incomplete.
 
 Please see [https://vercel.com/docs/v2/build-step#environment-variables](https://vercel.com/docs/v2/build-step#environment-variables) and/or [https://nextjs.org/docs/basic-features/environment-variables](https://nextjs.org/docs/basic-features/environment-variables) for details on defining environment variables for your application on [Vercel](https://vercel.com/).
 
@@ -174,7 +174,7 @@ Please see [https://vercel.com/docs/v2/build-step#environment-variables](https:/
 # Navigate to your desired directory (such as app)
 $ cd app
 
-# Use npm init to create a package.json with common values for your app
+# Use npm init to create a package.json with typical values for your app
 $ npm init
 
 # Install required Next.js and React dependencies
@@ -217,6 +217,6 @@ $ npm i -D typescript @types/react @types/node
 # Create an empty tsconfig.json file
 $ touch tsconfig.json
 
-# Run your app and Next.js will automatically discover and configure TypeScript for you
+# Run your app, and Next.js will automatically discover and configure TypeScript for you
 $ npm run dev
 ```
