@@ -1,6 +1,5 @@
 /* istanbul ignore file */
 import React from "react"
-import { mount, shallow } from "enzyme"
 import TestRenderer, { act } from "react-test-renderer"
 import { MockedProvider } from "@apollo/client/testing"
 
