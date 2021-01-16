@@ -1,6 +1,24 @@
 version: "3"
 
 services:
+  nextjs:
+    container_name: nextjs
+    depends_on:
+      - neo4j
+    ports:
+      - 3000:3000 # Next.js application
+      - 9229:9229 # Node.js debug port
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/usr/src/app
+      # Prevent the node_modules and .next folders in the Docker container from being accidentally overwritten with our initial mapping of our local directory to /usr/src/app
+      - /usr/src/app/node_modules
+      - /usr/src/app/.next
+    env_file:
+      - ./app/.env
+
   neo4j: # Official image available at https://hub.docker.com/_/neo4j
     build: ./neo4j/v4.x.x
     container_name: "neo4j-4.x.x"
@@ -9,10 +27,18 @@ services:
       - 7473:7473 # HTTPS
       - 7687:7687 # Bolt
     environment:
+      # See https://neo4j.com/docs/operations-manual/current/docker/configuration/ for the naming convention for NEO4J settings
+      #   As an example, dbms.tx_log.rotation.size would be NEO4J_dbms_tx__log_rotation_size
       - NEO4J_dbms_security_procedures_unrestricted=apoc.*
       - NEO4J_apoc_import_file_enabled=true
       - NEO4J_apoc_export_file_enabled=true
       - NEO4J_dbms_shell_enabled=true
+
+      # Please set 'dbms.allow_upgrade' to 'true' in your configuration file and try again. Detailed description: Upgrade is required to migrate store to new major version.
+      - NEO4J_dbms_allow__upgrade=true
+
+    volumes:
+      - neo4j_v4.x.x_data:/var/lib/neo4j
 
     # Uncomment the following section if you want to persist Neo4j settings and data
     # volumes:
@@ -30,3 +56,7 @@ services:
     #   # exposing this directory simplifies the process of copying the jars for Neo4j to access.
     #   - ./neo4j/tmp/plugins:/plugins
     # # See https://neo4j.com/developer/docker-run-neo4j/ for additional configuration ideas
+
+# For more information on how volumes work, please see https://docs.docker.com/storage/volumes/
+volumes:
+  neo4j_v4.x.x_data:

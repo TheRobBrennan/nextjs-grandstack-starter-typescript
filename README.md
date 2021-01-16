@@ -55,7 +55,7 @@ $ npm run dev:v4
 
 You should be able to access the following URLs:
 
-- [http://0.0.0.0:7474/browser/](http://0.0.0.0:7474/browser/) - This is the Neo4j Browser application that you can use to explore your Neo4j database - as well as run Cypher commands to seed your database with example data
+- [http://localhost:7474/browser/](http://localhost:7474/browser/) - This is the Neo4j Browser application that you can use to explore your Neo4j database - as well as run Cypher commands to seed your database with example data
 - [http://localhost:3000](http://localhost:3000) - The frontend for our Next.js application
 - [http://localhost:3000/api/graphql](http://localhost:3000/api/graphql) - The GraphIQL explorer for our backend Next.js API which will be a serverless GraphQL function on Vercel
 - [http://localhost:3000/api/ping](http://localhost:3000/api/ping) - A sample API route that will be a serverless function on Vercel
@@ -70,9 +70,9 @@ Neo4j v3.5.x:
 
 Neo4j v4.x.x:
 
-- `dev:v4` - This starts the Dockerized project with services defined in `docker-compose.yml` and layers `docker-compose-add-neo4j-v4.x.yml` on top so that `Neo4j v4.x.x` is used
-- `dev:v4:clean` - This builds fresh images and containers for the Dockerized project with services defined in `docker-compose.yml` and layers `docker-compose-add-neo4j-v4.x.yml` on top so that `Neo4j v4.x.x` is used
-- `dev:v4:stop` - This stops the Dockerized project with services defined in `docker-compose.yml` and `docker-compose-add-neo4j-v4.x.yml`
+- `dev:v4` - This starts the Dockerized project with services defined in `docker-compose-neo4j-v4.x.yml`
+- `dev:v4:clean` - This builds fresh images and containers for the Dockerized project with services defined in `docker-compose-neo4j-v4.x.yml`
+- `dev:v4:stop` - This stops the Dockerized project with services defined in `docker-compose-neo4j-v4.x.yml`
 
 Docker
 
@@ -123,8 +123,8 @@ One benefit of developing with [Next.js](https://nextjs.org) and deploying to [V
 
 In our case, we have two serverless functions that we are exposing:
 
-- `ping` - Displays a simple message to verify our serverless functions are online
 - `graphql` - This is the GraphQL endpoint our application and our GraphIQL IDE will use
+- `ping` - Displays a simple message to verify our serverless functions are online
 
 For more details, please refer to [Vercel Serverless Functions](https://vercel.com/docs/serverless-functions/introduction)
 
