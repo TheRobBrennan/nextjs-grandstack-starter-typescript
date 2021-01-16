@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { FC } from "react"
 import { useQuery } from "@apollo/react-hooks"
 import gql from "graphql-tag"
