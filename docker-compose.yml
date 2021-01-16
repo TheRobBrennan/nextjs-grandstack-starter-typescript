@@ -1,6 +1,24 @@
 version: "3"
 
 services:
+  nextjs:
+    container_name: nextjs
+    depends_on:
+      - neo4j
+    ports:
+      - 3000:3000 # Next.js application
+      - 9229:9229 # Node.js debug port
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/usr/src/app
+      # Prevent the node_modules and .next folders in the Docker container from being accidentally overwritten with our initial mapping of our local directory to /usr/src/app
+      - /usr/src/app/node_modules
+      - /usr/src/app/.next
+    env_file:
+      - ./app/.env
+
   neo4j: # Official image available at https://hub.docker.com/_/neo4j
     build: ./neo4j/v3.5.x
     container_name: "neo4j-3.5.x"
