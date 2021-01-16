@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GRANDstack Title component should render with a supplied title 1`] = `
+<h2
+  className="MuiTypography-root MuiTypography-h6 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+>
+  A GRANDstack Title
+</h2>
+`;
+
+exports[`GRANDstack Title component should render without any children 1`] = `
+<h2
+  className="MuiTypography-root MuiTypography-h6 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+/>
+`;
