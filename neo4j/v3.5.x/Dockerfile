@@ -1,5 +1,5 @@
 # Official Neo4j Docker Images available at https://hub.docker.com/_/neo4j
-FROM neo4j:3.5.21
+FROM neo4j:3.5.26
 
 # Install curl explicitly; it is no longer included in Neo4j base images
 RUN apt-get update; apt-get install curl -y
