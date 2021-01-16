@@ -3,6 +3,8 @@ import Head from "next/head"
 import Link from "next/link"
 import clsx from "clsx"
 
+import { dependencies } from "../../../package.json"
+
 // Material UI
 import { useStyles } from "./Header.styles"
 import { AppBar, CssBaseline, Toolbar, Typography } from "@material-ui/core"
@@ -10,8 +12,8 @@ import { AppBar, CssBaseline, Toolbar, Typography } from "@material-ui/core"
 const Header: FC = () => {
   const classes = useStyles()
 
-  const APP_TITLE = "Next.js GRANDstack Starter with TypeScript"
-  const APP_DESCRIPTION = "A sample Next.js GRANDstack Starter with TypeScript"
+  const APP_TITLE = `Next.js GRANDstack Starter with @neo4j/graphql ${dependencies["@neo4j/graphql"]} and TypeScript`
+  const APP_DESCRIPTION = `A sample ${APP_TITLE}`
   const APP_URL = "https://nextjs-grandstack-starter-typescript.vercel.app"
   const APP_TYPE = "website"
   const APP_LOGO = "img/grandstack.png"
