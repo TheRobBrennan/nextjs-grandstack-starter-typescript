@@ -16,7 +16,7 @@ import {
 
 export const GET_RECENT_REVIEWS_QUERY = gql`
   {
-    Reviews {
+    Reviews(options: { sort: [date_DESC] }) {
       date
       user {
         userId
