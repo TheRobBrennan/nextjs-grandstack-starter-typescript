@@ -19,7 +19,9 @@ const UserCount: FC = () => {
   const classes = useStyles()
 
   const { loading, error, data } = useQuery(GET_USER_COUNT_QUERY)
-  if (error) return <p>Error</p>
+  if (loading) return <p>Loading</p>
+  if (error) return <p>{error.message}</p>
+
   return (
     <>
       <Title>Total Users</Title>
