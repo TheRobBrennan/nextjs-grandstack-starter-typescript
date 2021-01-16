@@ -1,10 +1,12 @@
 import { ApolloServer } from "apollo-server-micro"
 import { driver } from "../../neo4j/db"
-import { augmentedSchema as schema } from "../../apollo/schema"
+import { augmentedSchema } from "../../apollo/schema"
+
+export const neo4jDriverInstance = driver()
 
 export const apolloServer = new ApolloServer({
-  schema,
-  context: { driver: driver() },
+  schema: augmentedSchema.schema,
+  context: ({ req }) => ({ req, driver: neo4jDriverInstance }),
 
   // Disable GraphIQL in production by setting these to false
   introspection: true,
