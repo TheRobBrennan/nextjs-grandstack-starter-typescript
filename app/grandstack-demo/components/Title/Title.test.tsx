@@ -12,7 +12,7 @@ describe("GRANDstack Title component", () => {
           <Title />
         </MockedProvider>
       )
-      expect(component).toBeDefined()
+      expect(component.toJSON()).toMatchSnapshot()
     })
     it("with a supplied title", () => {
       const title = "A GRANDstack Title"
@@ -21,7 +21,7 @@ describe("GRANDstack Title component", () => {
           <Title>{title}</Title>
         </MockedProvider>
       )
-      expect(component).toBeDefined()
+      expect(component.toJSON()).toMatchSnapshot()
     })
   })
 })
