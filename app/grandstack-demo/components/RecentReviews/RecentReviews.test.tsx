@@ -1,5 +1,4 @@
 import React from "react"
-import { mount } from "enzyme"
 import TestRenderer, { act } from "react-test-renderer"
 
 import RecentReviews, { GET_RECENT_REVIEWS_QUERY } from "./RecentReviews"
@@ -412,42 +411,79 @@ describe("GRANDstack RecentReviews component", () => {
       })
     })
 
-    // Verify data
+    // Verify
     const p = component.root.findByType("h2")
     expect(p.children).toContain("Recent Reviews")
   })
 
-  it.skip("should display an error message if our request resulted in an error", async () => {
-    // Define our Apollo request
-    const renderRequest = {
-      request: {
-        query: GET_RECENT_REVIEWS_QUERY,
-        variables: {},
-      },
-      error: new Error("Uh oh. Something bad happened."),
-    }
+  describe("should display an error message if", () => {
+    it("we receive an error attempting a network request", async () => {
+      // Define our Apollo request
+      const renderRequest = {
+        request: {
+          query: GET_RECENT_REVIEWS_QUERY,
+          variables: {},
+        },
+        error: new Error("Simulated network or HTTP error"),
+      }
 
-    // Define our mock response(s)
-    const gqlMocks = [renderRequest]
+      // Define our mock response(s)
+      const gqlMocks = [renderRequest]
 
-    const wrapper = mount(
-      <MockedProvider mocks={gqlMocks} addTypename={true}>
-        <RecentReviews />
-      </MockedProvider>
-    )
+      // Verify success state
+      const component = TestRenderer.create(
+        <MockedProvider mocks={gqlMocks} addTypename={false}>
+          <RecentReviews />
+        </MockedProvider>
+      )
 
-    // Verify loading state
-    expect(wrapper.html()).toContain("Loading")
-
-    // Advance to the next tick in the event loop so our chart can render
-    await act(() => {
-      return new Promise((resolve) => {
-        setTimeout(resolve, 0)
+      // Advance to the next tick in the event loop so our chart can render
+      await act(() => {
+        return new Promise((resolve) => {
+          setTimeout(resolve, 0)
+        })
       })
-    })
-    wrapper.update()
 
-    // Result
-    expect(wrapper.html()).toContain("Error")
+      // Verify
+      const tree = component.toJSON()
+      expect(tree.children).toContain("Simulated network or HTTP error")
+    })
+    it("our GraphQL server received our request and has returned with one or more error(s) in the result", async () => {
+      // Define our Apollo request
+      const renderRequest = {
+        request: {
+          query: GET_RECENT_REVIEWS_QUERY,
+          variables: {},
+        },
+        result: {
+          errors: [
+            new Error("Simulated GraphQL server response with an error"),
+          ],
+        },
+      }
+
+      // Define our mock response(s)
+      const gqlMocks = [renderRequest]
+
+      // Verify success state
+      const component = TestRenderer.create(
+        <MockedProvider mocks={gqlMocks} addTypename={false}>
+          <RecentReviews />
+        </MockedProvider>
+      )
+
+      // Advance to the next tick in the event loop so our chart can render
+      await act(() => {
+        return new Promise((resolve) => {
+          setTimeout(resolve, 0)
+        })
+      })
+
+      // Verify
+      const tree = component.toJSON()
+      expect(tree.children).toContain(
+        "Simulated GraphQL server response with an error"
+      )
+    })
   })
 })
