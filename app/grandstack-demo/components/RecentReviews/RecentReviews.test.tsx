@@ -1,8 +1,8 @@
 import React from "react"
 import TestRenderer, { act } from "react-test-renderer"
+import { MockedProvider } from "@apollo/client/testing"
 
 import RecentReviews, { GET_RECENT_REVIEWS_QUERY } from "./RecentReviews"
-import { MockedProvider } from "@apollo/client/testing"
 
 describe("GRANDstack RecentReviews component", () => {
   it("should render the latest reviews after receiving data", async () => {
