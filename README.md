@@ -27,6 +27,12 @@ $ npm run dev
 $ npm run dev:v4
 ```
 
+You should be able to access the following URLs:
+
+- [http://localhost:3000](http://localhost:3000) - The frontend for our Next.js application
+- [http://localhost:3000/api/graphql](http://localhost:3000/api/graphql) - The GraphIQL explorer for our backend Next.js API which will be a serverless GraphQL function on Vercel
+- [http://localhost:3000/api/ping](http://localhost:3000/api/ping) - A sample API route that will be a serverless function on Vercel
+
 Additionally, the following scripts have been created for managing your Docker environment based on the version of Neo4j you are using.
 
 Neo4j v3.5.x:
