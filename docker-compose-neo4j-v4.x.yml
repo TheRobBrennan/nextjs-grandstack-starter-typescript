@@ -4,7 +4,7 @@ services:
   nextjs:
     container_name: nextjs
     depends_on:
-      - neo4j-4.x.x
+      - neo4j
     ports:
       - 3000:3000 # Next.js application
       - 9229:9229 # Node.js debug port
@@ -19,7 +19,7 @@ services:
     env_file:
       - ./app/.env
 
-  neo4j-4.x.x: # Official image available at https://hub.docker.com/_/neo4j
+  neo4j: # Official image available at https://hub.docker.com/_/neo4j
     build: ./neo4j/v4.x.x
     container_name: "neo4j-4.x.x"
     ports:
