@@ -21,7 +21,7 @@ exports[`The default page should render 1`] = `
       <h1
         className="MuiTypography-root makeStyles-title-7 MuiTypography-h6 MuiTypography-colorInherit MuiTypography-noWrap"
       >
-        Next.js GRANDstack Starter with TypeScript
+        Next.js GRANDstack Starter with @neo4j/graphql ^1.0.0-alpha.2 and TypeScript
       </h1>
     </div>
   </header>
