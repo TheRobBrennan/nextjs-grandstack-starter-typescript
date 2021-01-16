@@ -75,7 +75,7 @@ describe("GRANDstack UserCount component", () => {
       .join(" ")
 
     // Verify success state
-    expect(result).toContain("4 users found")
+    expect(result).toContain(`${expectedTotalUsers} users found`)
   })
 
   describe("should display an error message if", () => {
