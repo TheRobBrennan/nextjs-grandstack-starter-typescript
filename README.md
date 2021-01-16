@@ -2,6 +2,8 @@
 
 This project is a starter for building a [GRANDstack](https://grandstack.io) ([GraphQL](https://graphql.org), [React](https://reactjs.org), [Apollo](https://www.apollographql.com), [Neo4j Database](https://neo4j.com)) application using [Next.js](https://nextjs.org) and [TypeScript](https://www.typescriptlang.org) instead of the original [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html) example available at [https://github.com/grand-stack/grand-stack-starter](https://github.com/grand-stack/grand-stack-starter).
 
+![app/__screenshots__/nextjs-frontend-default-page.png](app/__screenshots__/nextjs-frontend-default-page.png)
+
 ## Getting started
 
 To run this application as intended, you will need to:
@@ -142,13 +144,15 @@ The original [https://github.com/grand-stack/grand-stack-starter](https://github
 
 Once you have connected to your [Neo4j Database](https://neo4j.com) with [Neo4j Browser](https://neo4j.com/developer/neo4j-browser/), simply copy the text as is from `app/neo4j/__seed__/db.cypher` and execute the Cypher commands in a single action:
 
+![app/__screenshots__/neo4j-browser-00-paste-cypher.png](app/__screenshots__/neo4j-browser-00-paste-cypher.png)
+
 ![app/__screenshots__/neo4j-browser-01-paste-cypher.png](app/__screenshots__/neo4j-browser-01-paste-cypher.png)
 
 You can verify that your [Neo4j Database](https://neo4j.com) has been successfully created:
 
 ![app/__screenshots__/neo4j-browser-02-example-database-from-seed.png](app/__screenshots__/neo4j-browser-02-example-database-from-seed.png)
 
-![app/__screenshots__/neo4j-browser-02a-example-database-from-seed-fullscreen-view.png](app/__screenshots__/neo4j-browser-02a-example-database-from-seed-fullscreen-view.png)
+![app/__screenshots__/neo4j-browser-03-example-database-from-seed-fullscreen-view.png](app/__screenshots__/neo4j-browser-03-example-database-from-seed-fullscreen-view.png)
 
 ### Vercel
 
