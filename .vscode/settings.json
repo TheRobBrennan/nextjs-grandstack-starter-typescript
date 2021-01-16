@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
+    "autogenerate",
     "clsx",
     "dockerized",
     "dstack",
@@ -7,6 +8,7 @@
     "gran",
     "grandstack",
     "imdb",
+    "jwts",
     "lcov",
     "mkdir",
     "rating",
