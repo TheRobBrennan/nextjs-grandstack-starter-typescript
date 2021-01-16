@@ -180,7 +180,7 @@ You can verify that your [Neo4j Database](https://neo4j.com) has been successful
 
 ### Vercel
 
-This project has been configured to automatically deploy to [Vercel](https://vercel.com/) using the [Vercel for GitHub](https://vercel.com/github) integration.
+This project is ready to be configured for deployment to [Vercel](https://vercel.com/), as well as optionally using the [Vercel for GitHub](https://vercel.com/github) integration for automatic deployment.
 
 #### Environment variables
 
