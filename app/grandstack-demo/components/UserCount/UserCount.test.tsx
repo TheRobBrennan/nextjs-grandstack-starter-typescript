@@ -5,6 +5,36 @@ import { MockedProvider } from "@apollo/client/testing"
 import UserCount, { GET_USER_COUNT_QUERY } from "./UserCount"
 
 describe("GRANDstack UserCount component", () => {
+  it("should render without an error when loading data", async () => {
+    const expectedTotalUsers = 4
+
+    // Define our Apollo request
+    const renderRequest = {
+      request: {
+        query: GET_USER_COUNT_QUERY,
+        variables: {},
+      },
+      result: {
+        data: { userCount: expectedTotalUsers },
+      },
+    }
+
+    // Define our mock response(s)
+    const gqlMocks = [renderRequest]
+
+    // Render component
+    const component = TestRenderer.create(
+      <MockedProvider mocks={gqlMocks} addTypename={false}>
+        <UserCount />
+      </MockedProvider>
+    )
+
+    // NOTE: We are NOT advancing to the next tick in the event loop; we expect to see a loading state on the first render
+
+    // Verify loading state
+    expect(component.toJSON()).toMatchSnapshot()
+  })
+
   it("should render the Total Users chart after receiving data", async () => {
     const expectedTotalUsers = 4
 
@@ -22,7 +52,7 @@ describe("GRANDstack UserCount component", () => {
     // Define our mock response(s)
     const gqlMocks = [renderRequest]
 
-    // Verify success state
+    // Render component
     const component = TestRenderer.create(
       <MockedProvider mocks={gqlMocks} addTypename={false}>
         <UserCount />
@@ -43,11 +73,11 @@ describe("GRANDstack UserCount component", () => {
         return obj.children
       })
       .join(" ")
-    console.log(result)
 
-    // Verify
+    // Verify success state
     expect(result).toContain("4 users found")
   })
+
   describe("should display an error message if", () => {
     it("there is a network request failure", async () => {
       // Define our Apollo request

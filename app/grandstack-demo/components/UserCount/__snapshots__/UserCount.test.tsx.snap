@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GRANDstack UserCount component should render without an error when loading data 1`] = `
+Array [
+  <h2
+    className="MuiTypography-root MuiTypography-h6 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+  >
+    Total Users
+  </h2>,
+  <p
+    className="MuiTypography-root MuiTypography-h4"
+  >
+    Loading...
+  </p>,
+  <p
+    className="MuiTypography-root makeStyles-depositContext-1 MuiTypography-body1 MuiTypography-colorTextSecondary"
+  >
+    users found
+  </p>,
+]
+`;
