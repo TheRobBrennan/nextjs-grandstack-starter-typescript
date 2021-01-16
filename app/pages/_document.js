@@ -1,13 +1,14 @@
 import React from "react"
-import Document, { Head, Main, NextScript } from "next/document"
+import Document, { Html, Head, Main, NextScript } from "next/document"
 import { ServerStyleSheets } from "@material-ui/styles"
 
 import { GOOGLE_ANALYTICS_TRACKING_ID } from "../analytics/google/googleAnalytics"
 
 class MyDocument extends Document {
   render() {
+    // Fixed missing document components as advised in https://github.com/vercel/next.js/blob/master/errors/missing-document-component.md
     return (
-      <html>
+      <Html>
         <Head>
           <meta charSet="utf-8" />
           <meta name="theme-color" content="#000000" />
@@ -33,7 +34,7 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     )
   }
 }
