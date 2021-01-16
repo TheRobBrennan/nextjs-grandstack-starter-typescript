@@ -8,6 +8,12 @@
   "scripts": {
     "analyze": "cd app && npm run analyze",
     "deploy": "vercel",
+    "dev": "npm run docker:start",
+    "dev:clean": "npm run docker:build && npm run docker:start",
+    "dev:stop": "npm run docker:stop",
+    "dev:v4": "npm run docker:start:v4.x",
+    "dev:v4:clean": "npm run docker:build:v4.x && npm run docker:start:v4.x",
+    "dev:v4:stop": "npm run docker:stop:v4.x",
     "start": "cd app && npm run dev",
     "test": "cd app && npm test",
     "test:ci": "cd app && npm run test:ci",
@@ -23,7 +29,7 @@
     "docker:start:v4.x": "docker-compose -f docker-compose.yml -f docker-compose-add-neo4j-v4.x.yml up",
     "docker:stop": "docker-compose down",
     "docker:stop:v4.x": "docker-compose -f docker-compose.yml -f docker-compose-add-neo4j-v4.x.yml down",
-    "docker:nuke": "docker system prune -a && docker volume prune"
+    "docker:destroy:global": "docker system prune -f --volumes && docker image prune -a -f"
   },
   "repository": {
     "type": "git",
