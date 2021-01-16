@@ -6,11 +6,11 @@ A lot. 🎉
 
 On Thursday, January 14th, 2021, Neo4j had a big announcement in their GraphQL Community Call.
 
-As part of the initial GRANDstack offering, Neo4j labs had created [https://github.com/neo4j-graphql/neo4j-graphql-js](https://github.com/neo4j-graphql/neo4j-graphql-js) - enabling developers to build a GraphQL API layer on top of an already existing Neo4j database and the Cypher query language.
+As part of the initial [GRANDstack](https://grandstack.io) ([GraphQL](https://graphql.org), [React](https://reactjs.org), [Apollo](https://www.apollographql.com), [Neo4j Database](https://neo4j.com)) offering, Neo4j labs had created [https://github.com/neo4j-graphql/neo4j-graphql-js](https://github.com/neo4j-graphql/neo4j-graphql-js) - enabling developers to build a GraphQL API layer on top of an already existing Neo4j database and the Cypher query language.
 
-Neo4j has announced they will officially create a product for the GraphQL layer - `@neo4j/graphql`
+Neo4j has announced this effort is graduating from a labs project into a fully supported Neo4j product for the GraphQL layer - `@neo4j/graphql`
 
-This was a huge announcement - and well worth reviewing the community call and materials below.
+This was a huge announcement; and I would encourage you to review the community call and materials below.
 
 `@neo4j/graphql` is currently in early alpha release and is available NOW.
 
