@@ -12,6 +12,6 @@ describe("The default page", () => {
         <DefaultPage />
       </MockedProvider>
     )
-    expect(component).toBeDefined()
+    expect(component.toJSON()).toMatchSnapshot()
   })
 })

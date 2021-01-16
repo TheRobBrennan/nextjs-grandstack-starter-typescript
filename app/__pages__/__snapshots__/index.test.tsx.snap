@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The default page should render 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <header
+    className="MuiPaper-root MuiAppBar-root MuiAppBar-positionAbsolute MuiAppBar-colorPrimary makeStyles-appBar-6 MuiPaper-elevation4"
+  >
+    <div
+      className="MuiToolbar-root MuiToolbar-regular makeStyles-toolbar-5 MuiToolbar-gutters"
+    >
+      <img
+        alt="GRANDstack logo"
+        className="makeStyles-appBarImage-8"
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        src="img/grandstack.png"
+      />
+      <h1
+        className="MuiTypography-root makeStyles-title-7 MuiTypography-h6 MuiTypography-colorInherit MuiTypography-noWrap"
+      >
+        Next.js GRANDstack Starter with TypeScript
+      </h1>
+    </div>
+  </header>
+  <main
+    className="makeStyles-content-3"
+  >
+    <div
+      className="makeStyles-appBarSpacer-2"
+    />
+    <div
+      className="MuiContainer-root makeStyles-container-4 MuiContainer-maxWidthLg"
+    >
+      <div
+        className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4"
+      >
+        <div
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-8 MuiGrid-grid-lg-7"
+        >
+          <div
+            className="MuiPaper-root makeStyles-paper-10 makeStyles-fixedHeight-11 MuiPaper-elevation1 MuiPaper-rounded"
+          >
+            <p>
+              Loading
+            </p>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-5"
+        >
+          <div
+            className="MuiPaper-root makeStyles-paper-10 makeStyles-fixedHeight-11 MuiPaper-elevation1 MuiPaper-rounded"
+          >
+            <h2
+              className="MuiTypography-root MuiTypography-h6 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+            >
+              Total Users
+            </h2>
+            <p
+              className="MuiTypography-root MuiTypography-h4"
+            >
+              Loading...
+            </p>
+            <p
+              className="MuiTypography-root makeStyles-depositContext-12 MuiTypography-body1 MuiTypography-colorTextSecondary"
+            >
+              users found
+            </p>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+        >
+          <div
+            className="MuiPaper-root makeStyles-paper-10 MuiPaper-elevation1 MuiPaper-rounded"
+          >
+            <p>
+              Loading
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        className="MuiBox-root MuiBox-root-14"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+        >
+          Copyright © 
+          2021
+           
+          <a
+            className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorInherit"
+            href="/"
+            onBlur={[Function]}
+            onFocus={[Function]}
+          >
+            Robert J Brennan
+          </a>
+          . All rights reserved.
+        </p>
+      </div>
+    </div>
+  </main>
+</div>
+`;
