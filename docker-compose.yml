@@ -4,7 +4,7 @@ services:
   nextjs:
     container_name: nextjs
     depends_on:
-      - neo4j
+      - neo4j-3.5.x
     ports:
       - 3000:3000 # Next.js application
       - 9229:9229 # Node.js debug port
@@ -19,7 +19,7 @@ services:
     env_file:
       - ./app/.env
 
-  neo4j: # Official image available at https://hub.docker.com/_/neo4j
+  neo4j-3.5.x: # Official image available at https://hub.docker.com/_/neo4j
     build: ./neo4j/v3.5.x
     container_name: "neo4j-3.5.x"
     ports:
@@ -31,6 +31,8 @@ services:
       - NEO4J_apoc_import_file_enabled=true
       - NEO4J_apoc_export_file_enabled=true
       - NEO4J_dbms_shell_enabled=true
+    volumes:
+      - neo4j_v3.5.x_data:/var/lib/neo4j
 
     # Uncomment the following section if you want to persist Neo4j settings and data
     # volumes:
@@ -48,3 +50,7 @@ services:
     #   # exposing this directory simplifies the process of copying the jars for Neo4j to access.
     #   - ./neo4j/tmp/plugins:/plugins
     # # See https://neo4j.com/developer/docker-run-neo4j/ for additional configuration ideas
+
+# For more information on how volumes work, please see https://docs.docker.com/storage/volumes/
+volumes:
+  neo4j_v3.5.x_data:
