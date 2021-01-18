@@ -1,7 +1,7 @@
 {
   "name": "nextjs-grandstack-starter-typescript-typescript",
   "version": "0.0.0",
-  "description": "Example GRANDstack starter using Next.js to power your React app",
+  "description": "Starter project for building a GRANDstack (GraphQL, React, Apollo, Neo4j Database) application using Next.js",
   "keywords": [],
   "author": "Rob Brennan <rob@therobbrennan.com> (therobbrennan.com)",
   "license": "ISC",
